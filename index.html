@@ -1,0 +1,2209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:doc="http://xsltsl.org/xsl/documentation/1.0" xmlns:dt="http://xsltsl.org/date-time" xmlns:str="http://xsltsl.org/string" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-16">
+        <script type="text/javascript">
+            window.NREUM || (NREUM = {});
+            NREUM.info = {
+                "beacon": "bam.nr-data.net",
+                "errorBeacon": "bam.nr-data.net",
+                "licenseKey": "5000203576",
+                "applicationID": "13437370",
+                "transactionName": "M10EMEJRX0dRUEBbCgoXJzdgH1VbU0ZZVwsQS0kAX0dfWF9SUFYKB00LAV5EV11cVhpTFhRA",
+                "queueTime": 0,
+                "applicationTime": 404,
+                "agent": "",
+                "atts": ""
+            }
+        </script>
+        <script type="text/javascript">
+            (window.NREUM || (NREUM = {})).loader_config = {
+                xpid: "VQcBUV9SDBABV1VRAAIAVg=="
+            };
+            window.NREUM || (NREUM = {}), __nr_require = function(t, e, n) {
+                function r(n) {
+                    if (!e[n]) {
+                        var o = e[n] = {
+                            exports: {}
+                        };
+                        t[n][0].call(o.exports, function(e) {
+                            var o = t[n][1][e];
+                            return r(o || e)
+                        }, o, o.exports)
+                    }
+                    return e[n].exports
+                }
+                if ("function" == typeof __nr_require) return __nr_require;
+                for (var o = 0; o < n.length; o++) r(n[o]);
+                return r
+            }({
+                    1: [
+                        function(t, e, n) {
+                            function r(t) {
+                                try {
+                                    c.console && console.log(t)
+                                } catch (e) {}
+                            }
+                            var o, i = t("ee"),
+                                a = t(20),
+                                c = {};
+                            try {
+                                o = localStorage.getItem("__nr_flags").split(","), console && "function" == typeof console.log && (c.console = !0, o.indexOf("dev") !== -1 && (c.dev = !0), o.indexOf("nr_dev") !== -1 && (c.nrDev = !0))
+                            } catch (s) {}
+                            c.nrDev && i.on("internal-error", function(t) {
+                                r(t.stack)
+                            }), c.dev && i.on("fn-err", function(t, e, n) {
+                                r(n.stack)
+                            }), c.dev && (r("NR AGENT IN DEVELOPMENT MODE"), r("flags: " + a(c, function(t, e) {
+                                            return t
+                                        }).join(", ")))
+                        }, {}
+                    ],
+                    2: [
+                        function(t, e, n) {
+                            function r(t, e, n, r, c) {
+                                try {
+                                    h ? h -= 1 : o(c || new UncaughtException(t, e, n), !0)
+                                } catch (f) {
+                                    try {
+                                        i("ierr", [f, s.now(), !0])
+                                    } catch (d) {}
+                                }
+                                return "function" == typeof u && u.apply(this, a(arguments))
+                            }
+
+                            function UncaughtException(t, e, n) {
+                                this.message = t || "Uncaught error with no additional information", this.sourceURL = e, this.line = n
+                            }
+
+                            function o(t, e) {
+                                var n = e ? null : s.now();
+                                i("err", [t, n])
+                            }
+                            var i = t("handle"),
+                                a = t(21),
+                                c = t("ee"),
+                                s = t("loader"),
+                                f = t("gos"),
+                                u = window.onerror,
+                                d = !1,
+                                p = "nr@seenError",
+                                h = 0;
+                            s.features.err = !0, t(1), window.onerror = r;
+                            try {
+                                throw new Error
+                            } catch (l) {
+                                "stack" in l && (t(13), t(12), "addEventListener" in window && t(6), s.xhrWrappable && t(14), d = !0)
+                            }
+                            c.on("fn-start", function(t, e, n) {
+                                d && (h += 1)
+                            }), c.on("fn-err", function(t, e, n) {
+                                d && !n[p] && (f(n, p, function() {
+                                            return !0
+                                        }), this.thrown = !0, o(n))
+                            }), c.on("fn-end", function() {
+                                d && !this.thrown && h > 0 && (h -= 1)
+                            }), c.on("internal-error", function(t) {
+                                i("ierr", [t, s.now(), !0])
+                            })
+                        }, {}
+                    ],
+                    3: [
+                        function(t, e, n) {
+                            t("loader").features.ins = !0
+                        }, {}
+                    ],
+                    4: [
+                        function(t, e, n) {
+                            function r() {
+                                M++, S = y.hash, this[u] = b.now()
+                            }
+
+                            function o() {
+                                M--, y.hash !== S && i(0, !0);
+                                var t = b.now();
+                                this[l] = ~~this[l] + t - this[u], this[d] = t
+                            }
+
+                            function i(t, e) {
+                                E.emit("newURL", ["" + y, e])
+                            }
+
+                            function a(t, e) {
+                                t.on(e, function() {
+                                    this[e] = b.now()
+                                })
+                            }
+                            var c = "-start",
+                                s = "-end",
+                                f = "-body",
+                                u = "fn" + c,
+                                d = "fn" + s,
+                                p = "cb" + c,
+                                h = "cb" + s,
+                                l = "jsTime",
+                                m = "fetch",
+                                v = "addEventListener",
+                                w = window,
+                                y = w.location,
+                                b = t("loader");
+                            if (w[v] && b.xhrWrappable) {
+                                var g = t(10),
+                                    x = t(11),
+                                    E = t(8),
+                                    P = t(6),
+                                    O = t(13),
+                                    R = t(7),
+                                    T = t(14),
+                                    L = t(9),
+                                    j = t("ee"),
+                                    N = j.get("tracer");
+                                t(15), b.features.spa = !0;
+                                var S, M = 0;
+                                j.on(u, r), j.on(p, r), j.on(d, o), j.on(h, o), j.buffer([u, d, "xhr-done", "xhr-resolved"]), P.buffer([u]), O.buffer(["setTimeout" + s, "clearTimeout" + c, u]), T.buffer([u, "new-xhr", "send-xhr" + c]), R.buffer([m + c, m + "-done", m + f + c, m + f + s]), E.buffer(["newURL"]), g.buffer([u]), x.buffer(["propagate", p, h, "executor-err", "resolve" + c]), N.buffer([u, "no-" + u]), L.buffer(["new-jsonp", "cb-start", "jsonp-error", "jsonp-end"]), a(T, "send-xhr" + c), a(j, "xhr-resolved"), a(j, "xhr-done"), a(R, m + c), a(R, m + "-done"), a(L, "new-jsonp"), a(L, "jsonp-end"), a(L, "cb-start"), E.on("pushState-end", i), E.on("replaceState-end", i), w[v]("hashchange", i, !0), w[v]("load", i, !0), w[v]("popstate", function() {
+                                    i(0, M > 1)
+                                }, !0)
+                            }
+                        }, {}
+                    ],
+                    5: [
+                        function(t, e, n) {
+                            function r(t) {}
+                            if (window.performance && window.performance.timing && window.performance.getEntriesByType) {
+                                var o = t("ee"),
+                                    i = t("handle"),
+                                    a = t(13),
+                                    c = t(12),
+                                    s = "learResourceTimings",
+                                    f = "addEventListener",
+                                    u = "resourcetimingbufferfull",
+                                    d = "bstResource",
+                                    p = "resource",
+                                    h = "-start",
+                                    l = "-end",
+                                    m = "fn" + h,
+                                    v = "fn" + l,
+                                    w = "bstTimer",
+                                    y = "pushState",
+                                    b = t("loader");
+                                b.features.stn = !0, t(8);
+                                var g = NREUM.o.EV;
+                                o.on(m, function(t, e) {
+                                    var n = t[0];
+                                    n instanceof g && (this.bstStart = b.now())
+                                }), o.on(v, function(t, e) {
+                                    var n = t[0];
+                                    n instanceof g && i("bst", [n, e, this.bstStart, b.now()])
+                                }), a.on(m, function(t, e, n) {
+                                    this.bstStart = b.now(), this.bstType = n
+                                }), a.on(v, function(t, e) {
+                                    i(w, [e, this.bstStart, b.now(), this.bstType])
+                                }), c.on(m, function() {
+                                    this.bstStart = b.now()
+                                }), c.on(v, function(t, e) {
+                                    i(w, [e, this.bstStart, b.now(), "requestAnimationFrame"])
+                                }), o.on(y + h, function(t) {
+                                    this.time = b.now(), this.startPath = location.pathname + location.hash
+                                }), o.on(y + l, function(t) {
+                                    i("bstHist", [location.pathname + location.hash, this.startPath, this.time])
+                                }), f in window.performance && (window.performance["c" + s] ? window.performance[f](u, function(t) {
+                                            i(d, [window.performance.getEntriesByType(p)]), window.performance["c" + s]()
+                                        }, !1) : window.performance[f]("webkit" + u, function(t) {
+                                            i(d, [window.performance.getEntriesByType(p)]), window.performance["webkitC" + s]()
+                                        }, !1)), document[f]("scroll", r, {
+                                        passive: !0
+                                    }), document[f]("keypress", r, !1), document[f]("click", r, !1)
+                            }
+                        }, {}
+                    ],
+                    6: [
+                        function(t, e, n) {
+                            function r(t) {
+                                for (var e = t; e && !e.hasOwnProperty(u);) e = Object.getPrototypeOf(e);
+                                e && o(e)
+                            }
+
+                            function o(t) {
+                                c.inPlace(t, [u, d], "-", i)
+                            }
+
+                            function i(t, e) {
+                                return t[1]
+                            }
+                            var a = t("ee").get("events"),
+                                c = t(23)(a, !0),
+                                s = t("gos"),
+                                f = XMLHttpRequest,
+                                u = "addEventListener",
+                                d = "removeEventListener";
+                            e.exports = a, "getPrototypeOf" in Object ? (r(document), r(window), r(f.prototype)) : f.prototype.hasOwnProperty(u) && (o(window), o(f.prototype)), a.on(u + "-start", function(t, e) {
+                                var n = t[1],
+                                    r = s(n, "nr@wrapped", function() {
+                                        function t() {
+                                            if ("function" == typeof n.handleEvent) return n.handleEvent.apply(n, arguments)
+                                        }
+                                        var e = {
+                                            object: t,
+                                            "function": n
+                                        }[typeof n];
+                                        return e ? c(e, "fn-", null, e.name || "anonymous") : n
+                                    });
+                                this.wrapped = t[1] = r
+                            }), a.on(d + "-start", function(t) {
+                                t[1] = this.wrapped || t[1]
+                            })
+                        }, {}
+                    ],
+                    7: [
+                        function(t, e, n) {
+                            function r(t, e, n) {
+                                var r = t[e];
+                                "function" == typeof r && (t[e] = function() {
+                                    var t = r.apply(this, arguments);
+                                    return o.emit(n + "start", arguments, t), t.then(function(e) {
+                                        return o.emit(n + "end", [null, e], t), e
+                                    }, function(e) {
+                                        throw o.emit(n + "end", [e], t), e
+                                    })
+                                })
+                            }
+                            var o = t("ee").get("fetch"),
+                                i = t(20);
+                            e.exports = o;
+                            var a = window,
+                                c = "fetch-",
+                                s = c + "body-",
+                                f = ["arrayBuffer", "blob", "json", "text", "formData"],
+                                u = a.Request,
+                                d = a.Response,
+                                p = a.fetch,
+                                h = "prototype";
+                            u && d && p && (i(f, function(t, e) {
+                                        r(u[h], e, s), r(d[h], e, s)
+                                    }), r(a, "fetch", c), o.on(c + "end", function(t, e) {
+                                        var n = this;
+                                        e ? e.clone().arrayBuffer().then(function(t) {
+                                            n.rxSize = t.byteLength, o.emit(c + "done", [null, e], n)
+                                        }) : o.emit(c + "done", [t], n)
+                                    }))
+                        }, {}
+                    ],
+                    8: [
+                        function(t, e, n) {
+                            var r = t("ee").get("history"),
+                                o = t(23)(r);
+                            e.exports = r, o.inPlace(window.history, ["pushState", "replaceState"], "-")
+                        }, {}
+                    ],
+                    9: [
+                        function(t, e, n) {
+                            function r(t) {
+                                function e() {
+                                    s.emit("jsonp-end", [], p), t.removeEventListener("load", e, !1), t.removeEventListener("error", n, !1)
+                                }
+
+                                function n() {
+                                    s.emit("jsonp-error", [], p), s.emit("jsonp-end", [], p), t.removeEventListener("load", e, !1), t.removeEventListener("error", n, !1)
+                                }
+                                var r = t && "string" == typeof t.nodeName && "script" === t.nodeName.toLowerCase();
+                                if (r) {
+                                    var o = "function" == typeof t.addEventListener;
+                                    if (o) {
+                                        var a = i(t.src);
+                                        if (a) {
+                                            var u = c(a),
+                                                d = "function" == typeof u.parent[u.key];
+                                            if (d) {
+                                                var p = {};
+                                                f.inPlace(u.parent, [u.key], "cb-", p), t.addEventListener("load", e, !1), t.addEventListener("error", n, !1), s.emit("new-jsonp", [t.src], p)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            function o() {
+                                return "addEventListener" in window
+                            }
+
+                            function i(t) {
+                                var e = t.match(u);
+                                return e ? e[1] : null
+                            }
+
+                            function a(t, e) {
+                                var n = t.match(p),
+                                    r = n[1],
+                                    o = n[3];
+                                return o ? a(o, e[r]) : e[r]
+                            }
+
+                            function c(t) {
+                                var e = t.match(d);
+                                return e && e.length >= 3 ? {
+                                    key: e[2],
+                                    parent: a(e[1], window)
+                                } : {
+                                    key: t,
+                                    parent: window
+                                }
+                            }
+                            var s = t("ee").get("jsonp"),
+                                f = t(23)(s);
+                            if (e.exports = s, o()) {
+                                var u = /[?&](?:callback|cb)=([^&#]+)/,
+                                    d = /(.*)\.([^.]+)/,
+                                    p = /^(\w+)(\.|$)(.*)$/,
+                                    h = ["appendChild", "insertBefore", "replaceChild"];
+                                f.inPlace(HTMLElement.prototype, h, "dom-"), f.inPlace(HTMLHeadElement.prototype, h, "dom-"), f.inPlace(HTMLBodyElement.prototype, h, "dom-"), s.on("dom-start", function(t) {
+                                    r(t[0])
+                                })
+                            }
+                        }, {}
+                    ],
+                    10: [
+                        function(t, e, n) {
+                            var r = t("ee").get("mutation"),
+                                o = t(23)(r),
+                                i = NREUM.o.MO;
+                            e.exports = r, i && (window.MutationObserver = function(t) {
+                                return this instanceof i ? new i(o(t, "fn-")) : i.apply(this, arguments)
+                            }, MutationObserver.prototype = i.prototype)
+                        }, {}
+                    ],
+                    11: [
+                        function(t, e, n) {
+                            function r(t) {
+                                var e = a.context(),
+                                    n = c(t, "executor-", e),
+                                    r = new f(n);
+                                return a.context(r).getCtx = function() {
+                                    return e
+                                }, a.emit("new-promise", [r, e], e), r
+                            }
+
+                            function o(t, e) {
+                                return e
+                            }
+                            var i = t(23),
+                                a = t("ee").get("promise"),
+                                c = i(a),
+                                s = t(20),
+                                f = NREUM.o.PR;
+                            e.exports = a, f && (window.Promise = r, ["all", "race"].forEach(function(t) {
+                                        var e = f[t];
+                                        f[t] = function(n) {
+                                            function r(t) {
+                                                return function() {
+                                                    a.emit("propagate", [null, !o], i), o = o || !t
+                                                }
+                                            }
+                                            var o = !1;
+                                            s(n, function(e, n) {
+                                                Promise.resolve(n).then(r("all" === t), r(!1))
+                                            });
+                                            var i = e.apply(f, arguments),
+                                                c = f.resolve(i);
+                                            return c
+                                        }
+                                    }), ["resolve", "reject"].forEach(function(t) {
+                                        var e = f[t];
+                                        f[t] = function(t) {
+                                            var n = e.apply(f, arguments);
+                                            return t !== n && a.emit("propagate", [t, !0], n), n
+                                        }
+                                    }), f.prototype["catch"] = function(t) {
+                                    return this.then(null, t)
+                                }, f.prototype = Object.create(f.prototype, {
+                                        constructor: {
+                                            value: r
+                                        }
+                                    }), s(Object.getOwnPropertyNames(f), function(t, e) {
+                                        try {
+                                            r[e] = f[e]
+                                        } catch (n) {}
+                                    }), a.on("executor-start", function(t) {
+                                        t[0] = c(t[0], "resolve-", this), t[1] = c(t[1], "resolve-", this)
+                                    }), a.on("executor-err", function(t, e, n) {
+                                        t[1](n)
+                                    }), c.inPlace(f.prototype, ["then"], "then-", o), a.on("then-start", function(t, e) {
+                                        this.promise = e, t[0] = c(t[0], "cb-", this), t[1] = c(t[1], "cb-", this)
+                                    }), a.on("then-end", function(t, e, n) {
+                                        this.nextPromise = n;
+                                        var r = this.promise;
+                                        a.emit("propagate", [r, !0], n)
+                                    }), a.on("cb-end", function(t, e, n) {
+                                        a.emit("propagate", [n, !0], this.nextPromise)
+                                    }), a.on("propagate", function(t, e, n) {
+                                        this.getCtx && !e || (this.getCtx = function() {
+                                            if (t instanceof Promise) var e = a.context(t);
+                                            return e && e.getCtx ? e.getCtx() : this
+                                        })
+                                    }), r.toString = function() {
+                                    return "" + f
+                                })
+                        }, {}
+                    ],
+                    12: [
+                        function(t, e, n) {
+                            var r = t("ee").get("raf"),
+                                o = t(23)(r),
+                                i = "equestAnimationFrame";
+                            e.exports = r, o.inPlace(window, ["r" + i, "mozR" + i, "webkitR" + i, "msR" + i], "raf-"), r.on("raf-start", function(t) {
+                                t[0] = o(t[0], "fn-")
+                            })
+                        }, {}
+                    ],
+                    13: [
+                        function(t, e, n) {
+                            function r(t, e, n) {
+                                t[0] = a(t[0], "fn-", null, n)
+                            }
+
+                            function o(t, e, n) {
+                                this.method = n, this.timerDuration = isNaN(t[1]) ? 0 : +t[1], t[0] = a(t[0], "fn-", this, n)
+                            }
+                            var i = t("ee").get("timer"),
+                                a = t(23)(i),
+                                c = "setTimeout",
+                                s = "setInterval",
+                                f = "clearTimeout",
+                                u = "-start",
+                                d = "-";
+                            e.exports = i, a.inPlace(window, [c, "setImmediate"], c + d), a.inPlace(window, [s], s + d), a.inPlace(window, [f, "clearImmediate"], f + d), i.on(s + u, r), i.on(c + u, o)
+                        }, {}
+                    ],
+                    14: [
+                        function(t, e, n) {
+                            function r(t, e) {
+                                d.inPlace(e, ["onreadystatechange"], "fn-", c)
+                            }
+
+                            function o() {
+                                var t = this,
+                                    e = u.context(t);
+                                t.readyState > 3 && !e.resolved && (e.resolved = !0, u.emit("xhr-resolved", [], t)), d.inPlace(t, y, "fn-", c)
+                            }
+
+                            function i(t) {
+                                b.push(t), l && (x ? x.then(a) : v ? v(a) : (E = -E, P.data = E))
+                            }
+
+                            function a() {
+                                for (var t = 0; t < b.length; t++) r([], b[t]);
+                                b.length && (b = [])
+                            }
+
+                            function c(t, e) {
+                                return e
+                            }
+
+                            function s(t, e) {
+                                for (var n in t) e[n] = t[n];
+                                return e
+                            }
+                            t(6);
+                            var f = t("ee"),
+                                u = f.get("xhr"),
+                                d = t(23)(u),
+                                p = NREUM.o,
+                                h = p.XHR,
+                                l = p.MO,
+                                m = p.PR,
+                                v = p.SI,
+                                w = "readystatechange",
+                                y = ["onload", "onerror", "onabort", "onloadstart", "onloadend", "onprogress", "ontimeout"],
+                                b = [];
+                            e.exports = u;
+                            var g = window.XMLHttpRequest = function(t) {
+                                var e = new h(t);
+                                try {
+                                    u.emit("new-xhr", [e], e), e.addEventListener(w, o, !1)
+                                } catch (n) {
+                                    try {
+                                        u.emit("internal-error", [n])
+                                    } catch (r) {}
+                                }
+                                return e
+                            };
+                            if (s(h, g), g.prototype = h.prototype, d.inPlace(g.prototype, ["open", "send"], "-xhr-", c), u.on("send-xhr-start", function(t, e) {
+                                        r(t, e), i(e)
+                                    }), u.on("open-xhr-start", r), l) {
+                                var x = m && m.resolve();
+                                if (!v && !m) {
+                                    var E = 1,
+                                        P = document.createTextNode(E);
+                                    new l(a).observe(P, {
+                                            characterData: !0
+                                        })
+                                }
+                            } else f.on("fn-end", function(t) {
+                                t[0] && t[0].type === w || a()
+                            })
+                        }, {}
+                    ],
+                    15: [
+                        function(t, e, n) {
+                            function r(t) {
+                                var e = this.params,
+                                    n = this.metrics;
+                                if (!this.ended) {
+                                    this.ended = !0;
+                                    for (var r = 0; r < d; r++) t.removeEventListener(u[r], this.listener, !1);
+                                    if (!e.aborted) {
+                                        if (n.duration = a.now() - this.startTime, 4 === t.readyState) {
+                                            e.status = t.status;
+                                            var i = o(t, this.lastSize);
+                                            if (i && (n.rxSize = i), this.sameOrigin) {
+                                                var s = t.getResponseHeader("X-NewRelic-App-Data");
+                                                s && (e.cat = s.split(", ").pop())
+                                            }
+                                        } else e.status = 0;
+                                        n.cbTime = this.cbTime, f.emit("xhr-done", [t], t), c("xhr", [e, n, this.startTime])
+                                    }
+                                }
+                            }
+
+                            function o(t, e) {
+                                var n = t.responseType;
+                                if ("json" === n && null !== e) return e;
+                                var r = "arraybuffer" === n || "blob" === n || "json" === n ? t.response : t.responseText;
+                                return l(r)
+                            }
+
+                            function i(t, e) {
+                                var n = s(e),
+                                    r = t.params;
+                                r.host = n.hostname + ":" + n.port, r.pathname = n.pathname, t.sameOrigin = n.sameOrigin
+                            }
+                            var a = t("loader");
+                            if (a.xhrWrappable) {
+                                var c = t("handle"),
+                                    s = t(16),
+                                    f = t("ee"),
+                                    u = ["load", "error", "abort", "timeout"],
+                                    d = u.length,
+                                    p = t("id"),
+                                    h = t(19),
+                                    l = t(18),
+                                    m = window.XMLHttpRequest;
+                                a.features.xhr = !0, t(14), f.on("new-xhr", function(t) {
+                                    var e = this;
+                                    e.totalCbs = 0, e.called = 0, e.cbTime = 0, e.end = r, e.ended = !1, e.xhrGuids = {}, e.lastSize = null, h && (h > 34 || h < 10) || window.opera || t.addEventListener("progress", function(t) {
+                                        e.lastSize = t.loaded
+                                    }, !1)
+                                }), f.on("open-xhr-start", function(t) {
+                                    this.params = {
+                                        method: t[0]
+                                    }, i(this, t[1]), this.metrics = {}
+                                }), f.on("open-xhr-end", function(t, e) {
+                                    "loader_config" in NREUM && "xpid" in NREUM.loader_config && this.sameOrigin && e.setRequestHeader("X-NewRelic-ID", NREUM.loader_config.xpid)
+                                }), f.on("send-xhr-start", function(t, e) {
+                                    var n = this.metrics,
+                                        r = t[0],
+                                        o = this;
+                                    if (n && r) {
+                                        var i = l(r);
+                                        i && (n.txSize = i)
+                                    }
+                                    this.startTime = a.now(), this.listener = function(t) {
+                                        try {
+                                            "abort" === t.type && (o.params.aborted = !0), ("load" !== t.type || o.called === o.totalCbs && (o.onloadCalled || "function" != typeof e.onload)) && o.end(e)
+                                        } catch (n) {
+                                            try {
+                                                f.emit("internal-error", [n])
+                                            } catch (r) {}
+                                        }
+                                    };
+                                    for (var c = 0; c < d; c++) e.addEventListener(u[c], this.listener, !1)
+                                }), f.on("xhr-cb-time", function(t, e, n) {
+                                    this.cbTime += t, e ? this.onloadCalled = !0 : this.called += 1, this.called !== this.totalCbs || !this.onloadCalled && "function" == typeof n.onload || this.end(n)
+                                }), f.on("xhr-load-added", function(t, e) {
+                                    var n = "" + p(t) + !! e;
+                                    this.xhrGuids && !this.xhrGuids[n] && (this.xhrGuids[n] = !0, this.totalCbs += 1)
+                                }), f.on("xhr-load-removed", function(t, e) {
+                                    var n = "" + p(t) + !! e;
+                                    this.xhrGuids && this.xhrGuids[n] && (delete this.xhrGuids[n], this.totalCbs -= 1)
+                                }), f.on("addEventListener-end", function(t, e) {
+                                    e instanceof m && "load" === t[0] && f.emit("xhr-load-added", [t[1], t[2]], e)
+                                }), f.on("removeEventListener-end", function(t, e) {
+                                    e instanceof m && "load" === t[0] && f.emit("xhr-load-removed", [t[1], t[2]], e)
+                                }), f.on("fn-start", function(t, e, n) {
+                                    e instanceof m && ("onload" === n && (this.onload = !0), ("load" === (t[0] && t[0].type) || this.onload) && (this.xhrCbStart = a.now()))
+                                }), f.on("fn-end", function(t, e) {
+                                    this.xhrCbStart && f.emit("xhr-cb-time", [a.now() - this.xhrCbStart, this.onload, e], e)
+                                })
+                            }
+                        }, {}
+                    ],
+                    16: [
+                        function(t, e, n) {
+                            e.exports = function(t) {
+                                var e = document.createElement("a"),
+                                    n = window.location,
+                                    r = {};
+                                e.href = t, r.port = e.port;
+                                var o = e.href.split("://");
+                                !r.port && o[1] && (r.port = o[1].split("/")[0].split("@").pop().split(":")[1]), r.port && "0" !== r.port || (r.port = "https" === o[0] ? "443" : "80"), r.hostname = e.hostname || n.hostname, r.pathname = e.pathname, r.protocol = o[0], "/" !== r.pathname.charAt(0) && (r.pathname = "/" + r.pathname);
+                                var i = !e.protocol || ":" === e.protocol || e.protocol === n.protocol,
+                                    a = e.hostname === document.domain && e.port === n.port;
+                                return r.sameOrigin = i && (!e.hostname || a), r
+                            }
+                        }, {}
+                    ],
+                    17: [
+                        function(t, e, n) {
+                            function r() {}
+
+                            function o(t, e, n) {
+                                return function() {
+                                    return i(t, [f.now()].concat(c(arguments)), e ? null : this, n), e ? void 0 : this
+                                }
+                            }
+                            var i = t("handle"),
+                                a = t(20),
+                                c = t(21),
+                                s = t("ee").get("tracer"),
+                                f = t("loader"),
+                                u = NREUM;
+                            "undefined" == typeof window.newrelic && (newrelic = u);
+                            var d = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"],
+                                p = "api-",
+                                h = p + "ixn-";
+                            a(d, function(t, e) {
+                                u[e] = o(p + e, !0, "api")
+                            }), u.addPageAction = o(p + "addPageAction", !0), u.setCurrentRouteName = o(p + "routeName", !0), e.exports = newrelic, u.interaction = function() {
+                                return (new r).get()
+                            };
+                            var l = r.prototype = {
+                                createTracer: function(t, e) {
+                                    var n = {}, r = this,
+                                        o = "function" == typeof e;
+                                    return i(h + "tracer", [f.now(), t, n], r),
+                                    function() {
+                                        if (s.emit((o ? "" : "no-") + "fn-start", [f.now(), r, o], n), o) try {
+                                            return e.apply(this, arguments)
+                                        } catch (t) {
+                                            throw s.emit("fn-err", [arguments, this, t], n), t
+                                        } finally {
+                                            s.emit("fn-end", [f.now()], n)
+                                        }
+                                    }
+                                }
+                            };
+                            a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function(t, e) {
+                                l[e] = o(h + e)
+                            }), newrelic.noticeError = function(t) {
+                                "string" == typeof t && (t = new Error(t)), i("err", [t, f.now()])
+                            }
+                        }, {}
+                    ],
+                    18: [
+                        function(t, e, n) {
+                            e.exports = function(t) {
+                                if ("string" == typeof t && t.length) return t.length;
+                                if ("object" == typeof t) {
+                                    if ("undefined" != typeof ArrayBuffer && t instanceof ArrayBuffer && t.byteLength) return t.byteLength;
+                                    if ("undefined" != typeof Blob && t instanceof Blob && t.size) return t.size;
+                                    if (!("undefined" != typeof FormData && t instanceof FormData)) try {
+                                        return JSON.stringify(t).length
+                                    } catch (e) {
+                                        return
+                                    }
+                                }
+                            }
+                        }, {}
+                    ],
+                    19: [
+                        function(t, e, n) {
+                            var r = 0,
+                                o = navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);
+                            o && (r = +o[1]), e.exports = r
+                        }, {}
+                    ],
+                    20: [
+                        function(t, e, n) {
+                            function r(t, e) {
+                                var n = [],
+                                    r = "",
+                                    i = 0;
+                                for (r in t) o.call(t, r) && (n[i] = e(r, t[r]), i += 1);
+                                return n
+                            }
+                            var o = Object.prototype.hasOwnProperty;
+                            e.exports = r
+                        }, {}
+                    ],
+                    21: [
+                        function(t, e, n) {
+                            function r(t, e, n) {
+                                e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0);
+                                for (var r = -1, o = n - e || 0, i = Array(o < 0 ? 0 : o); ++r < o;) i[r] = t[e + r];
+                                return i
+                            }
+                            e.exports = r
+                        }, {}
+                    ],
+                    22: [
+                        function(t, e, n) {
+                            e.exports = {
+                                exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart
+                            }
+                        }, {}
+                    ],
+                    23: [
+                        function(t, e, n) {
+                            function r(t) {
+                                return !(t && t instanceof Function && t.apply && !t[a])
+                            }
+                            var o = t("ee"),
+                                i = t(21),
+                                a = "nr@original",
+                                c = Object.prototype.hasOwnProperty,
+                                s = !1;
+                            e.exports = function(t, e) {
+                                function n(t, e, n, o) {
+                                    function nrWrapper() {
+                                        var r, a, c, s;
+                                        try {
+                                            a = this, r = i(arguments), c = "function" == typeof n ? n(r, a) : n || {}
+                                        } catch (f) {
+                                            p([f, "", [r, a, o], c])
+                                        }
+                                        u(e + "start", [r, a, o], c);
+                                        try {
+                                            return s = t.apply(a, r)
+                                        } catch (d) {
+                                            throw u(e + "err", [r, a, d], c), d
+                                        } finally {
+                                            u(e + "end", [r, a, s], c)
+                                        }
+                                    }
+                                    return r(t) ? t : (e || (e = ""), nrWrapper[a] = t, d(t, nrWrapper), nrWrapper)
+                                }
+
+                                function f(t, e, o, i) {
+                                    o || (o = "");
+                                    var a, c, s, f = "-" === o.charAt(0);
+                                    for (s = 0; s < e.length; s++) c = e[s], a = t[c], r(a) || (t[c] = n(a, f ? c + o : o, i, c))
+                                }
+
+                                function u(n, r, o) {
+                                    if (!s || e) {
+                                        var i = s;
+                                        s = !0;
+                                        try {
+                                            t.emit(n, r, o, e)
+                                        } catch (a) {
+                                            p([a, n, r, o])
+                                        }
+                                        s = i
+                                    }
+                                }
+
+                                function d(t, e) {
+                                    if (Object.defineProperty && Object.keys) try {
+                                        var n = Object.keys(t);
+                                        return n.forEach(function(n) {
+                                            Object.defineProperty(e, n, {
+                                                    get: function() {
+                                                        return t[n]
+                                                    },
+                                                    set: function(e) {
+                                                        return t[n] = e, e
+                                                    }
+                                                })
+                                        }), e
+                                    } catch (r) {
+                                        p([r])
+                                    }
+                                    for (var o in t) c.call(t, o) && (e[o] = t[o]);
+                                    return e
+                                }
+
+                                function p(e) {
+                                    try {
+                                        t.emit("internal-error", e)
+                                    } catch (n) {}
+                                }
+                                return t || (t = o), n.inPlace = f, n.flag = a, n
+                            }
+                        }, {}
+                    ],
+                    ee: [
+                        function(t, e, n) {
+                            function r() {}
+
+                            function o(t) {
+                                function e(t) {
+                                    return t && t instanceof r ? t : t ? s(t, c, i) : i()
+                                }
+
+                                function n(n, r, o, i) {
+                                    if (!p.aborted || i) {
+                                        t && t(n, r, o);
+                                        for (var a = e(o), c = l(n), s = c.length, f = 0; f < s; f++) c[f].apply(a, r);
+                                        var d = u[y[n]];
+                                        return d && d.push([b, n, r, a]), a
+                                    }
+                                }
+
+                                function h(t, e) {
+                                    w[t] = l(t).concat(e)
+                                }
+
+                                function l(t) {
+                                    return w[t] || []
+                                }
+
+                                function m(t) {
+                                    return d[t] = d[t] || o(n)
+                                }
+
+                                function v(t, e) {
+                                    f(t, function(t, n) {
+                                        e = e || "feature", y[n] = e, e in u || (u[e] = [])
+                                    })
+                                }
+                                var w = {}, y = {}, b = {
+                                        on: h,
+                                        emit: n,
+                                        get: m,
+                                        listeners: l,
+                                        context: e,
+                                        buffer: v,
+                                        abort: a,
+                                        aborted: !1
+                                    };
+                                return b
+                            }
+
+                            function i() {
+                                return new r
+                            }
+
+                            function a() {
+                                (u.api || u.feature) && (p.aborted = !0, u = p.backlog = {})
+                            }
+                            var c = "nr@context",
+                                s = t("gos"),
+                                f = t(20),
+                                u = {}, d = {}, p = e.exports = o();
+                            p.backlog = u
+                        }, {}
+                    ],
+                    gos: [
+                        function(t, e, n) {
+                            function r(t, e, n) {
+                                if (o.call(t, e)) return t[e];
+                                var r = n();
+                                if (Object.defineProperty && Object.keys) try {
+                                    return Object.defineProperty(t, e, {
+                                            value: r,
+                                            writable: !0,
+                                            enumerable: !1
+                                        }), r
+                                } catch (i) {}
+                                return t[e] = r, r
+                            }
+                            var o = Object.prototype.hasOwnProperty;
+                            e.exports = r
+                        }, {}
+                    ],
+                    handle: [
+                        function(t, e, n) {
+                            function r(t, e, n, r) {
+                                o.buffer([t], r), o.emit(t, e, n)
+                            }
+                            var o = t("ee").get("handle");
+                            e.exports = r, r.ee = o
+                        }, {}
+                    ],
+                    id: [
+                        function(t, e, n) {
+                            function r(t) {
+                                var e = typeof t;
+                                return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, i, function() {
+                                    return o++
+                                })
+                            }
+                            var o = 1,
+                                i = "nr@id",
+                                a = t("gos");
+                            e.exports = r
+                        }, {}
+                    ],
+                    loader: [
+                        function(t, e, n) {
+                            function r() {
+                                if (!x++) {
+                                    var t = g.info = NREUM.info,
+                                        e = p.getElementsByTagName("script")[0];
+                                    if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort();
+                                    f(y, function(e, n) {
+                                        t[e] || (t[e] = n)
+                                    }), s("mark", ["onload", a() + g.offset], null, "api");
+                                    var n = p.createElement("script");
+                                    n.src = "https://" + t.agent, e.parentNode.insertBefore(n, e)
+                                }
+                            }
+
+                            function o() {
+                                "complete" === p.readyState && i()
+                            }
+
+                            function i() {
+                                s("mark", ["domContent", a() + g.offset], null, "api")
+                            }
+
+                            function a() {
+                                return E.exists && performance.now ? Math.round(performance.now()) : (c = Math.max((new Date).getTime(), c)) - g.offset
+                            }
+                            var c = (new Date).getTime(),
+                                s = t("handle"),
+                                f = t(20),
+                                u = t("ee"),
+                                d = window,
+                                p = d.document,
+                                h = "addEventListener",
+                                l = "attachEvent",
+                                m = d.XMLHttpRequest,
+                                v = m && m.prototype;
+                            NREUM.o = {
+                                ST: setTimeout,
+                                SI: d.setImmediate,
+                                CT: clearTimeout,
+                                XHR: m,
+                                REQ: d.Request,
+                                EV: d.Event,
+                                PR: d.Promise,
+                                MO: d.MutationObserver
+                            };
+                            var w = "" + location,
+                                y = {
+                                    beacon: "bam.nr-data.net",
+                                    errorBeacon: "bam.nr-data.net",
+                                    agent: "js-agent.newrelic.com/nr-spa-1071.min.js"
+                                }, b = m && v && v[h] && !/CriOS/.test(navigator.userAgent),
+                                g = e.exports = {
+                                    offset: c,
+                                    now: a,
+                                    origin: w,
+                                    features: {},
+                                    xhrWrappable: b
+                                };
+                            t(17), p[h] ? (p[h]("DOMContentLoaded", i, !1), d[h]("load", r, !1)) : (p[l]("onreadystatechange", o), d[l]("onload", r)), s("mark", ["firstbyte", c], null, "api");
+                            var x = 0,
+                                E = t(22)
+                        }, {}
+                    ]
+                }, {}, ["loader", 2, 15, 5, 3, 4]);
+        </script>
+        <title>Tony Mayse</title>
+        <style type="text/css" id="static">
+            /* vietnamese */
+            @font-face {
+                font-family:'Alegreya Sans Light';
+                font-style: normal;
+                font-weight: 300;
+                src: local('Alegreya Sans Light'), local('AlegreyaSans-Light'), url(https:https://fonts.gstatic.com/s/alegreyasans/v3/11EDm-lum6tskJMBbdy9ac9SaW3tdaDfN7YJZ539VCk.woff2) format('woff2');
+                unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+            }
+            /* latin-ext */
+            @font-face {
+                font-family:'Alegreya Sans Light';
+                font-style: normal;
+                font-weight: 300;
+                src: local('Alegreya Sans Light'), local('AlegreyaSans-Light'), url(https:https://fonts.gstatic.com/s/alegreyasans/v3/11EDm-lum6tskJMBbdy9abP5YdNLbv2Ph7c-yN9iHnU.woff2) format('woff2');
+                unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+            }
+            /* latin */
+            @font-face {
+                font-family:'Alegreya Sans Light';
+                font-style: normal;
+                font-weight: 300;
+                src: local('Alegreya Sans Light'), local('AlegreyaSans-Light'), url(https://fonts.gstatic.com/s/alegreyasans/v3/11EDm-lum6tskJMBbdy9aeNC-0xib1SK7Oln1iLdt4o.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+            }
+            /* vietnamese */
+            @font-face {
+                font-family:'Alegreya Sans';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Alegreya Sans'), local('AlegreyaSans-Regular'), url(https://fonts.gstatic.com/s/alegreyasans/v3/KYNzioYhDai7mTMnx_gDgt01sE-sBCcxeIPQ5nVmD-Y.woff2) format('woff2');
+                unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+            }
+            /* latin-ext */
+            @font-face {
+                font-family:'Alegreya Sans';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Alegreya Sans'), local('AlegreyaSans-Regular'), url(https://fonts.gstatic.com/s/alegreyasans/v3/KYNzioYhDai7mTMnx_gDguo_hGDVFZ4kKx4ST9hVovI.woff2) format('woff2');
+                unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+            }
+            /* latin */
+            @font-face {
+                font-family:'Alegreya Sans';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Alegreya Sans'), local('AlegreyaSans-Regular'), url(https://fonts.gstatic.com/s/alegreyasans/v3/KYNzioYhDai7mTMnx_gDgsmBRJoLbs7X6hY7yFEc97Q.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+            }
+            /* vietnamese */
+            @font-face {
+                font-family:'Alegreya Sans';
+                font-style: normal;
+                font-weight: 500;
+                src: local('Alegreya Sans Medium'), local('AlegreyaSans-Medium'), url(https://fonts.gstatic.com/s/alegreyasans/v3/11EDm-lum6tskJMBbdy9aa-4WGWUxW6iB9F1ud5NG84.woff2) format('woff2');
+                unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+            }
+            /* latin-ext */
+            @font-face {
+                font-family:'Alegreya Sans Medium';
+                font-style: normal;
+                font-weight: 500;
+                src: local('Alegreya Sans Medium'), local('AlegreyaSans-Medium'), url(https://fonts.gstatic.com/s/alegreyasans/v3/11EDm-lum6tskJMBbdy9aStaEaHGbET_jfOf1wWvOeM.woff2) format('woff2');
+                unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+            }
+            /* latin */
+            @font-face {
+                font-family:'Alegreya Sans Medium';
+                font-style: normal;
+                font-weight: 500;
+                src: local('Alegreya Sans Medium'), local('AlegreyaSans-Medium'), url(https://fonts.gstatic.com/s/alegreyasans/v3/11EDm-lum6tskJMBbdy9aVZp3tKiB9YnYzAIdkxupX8.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+            }
+            /* devanagari */
+            @font-face {
+                font-family:'Hind Medium';
+                font-style: normal;
+                font-weight: 500;
+                src: local('Hind Medium'), local('Hind-Medium'), url(https://fonts.gstatic.com/s/hind/v6/bWPw4Za2XndpOjggSNN5JPY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+                unicode-range: U+02BC, U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200B-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+            }
+            /* latin-ext */
+            @font-face {
+                font-family:'Hind Medium';
+                font-style: normal;
+                font-weight: 500;
+                src: local('Hind Medium'), local('Hind-Medium'), url(https://fonts.gstatic.com/s/hind/v6/TCDCvLw6ewp4kJ2WSI4MT_Y6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+                unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+            }
+            /* latin */
+            @font-face {
+                font-family:'Hind Medium';
+                font-style: normal;
+                font-weight: 500;
+                src: local('Hind Medium'), local('Hind-Medium'), url(https://fonts.gstatic.com/s/hind/v6/_JiDQLq4JWzs7prWhNNmuA.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+            }
+            /* devanagari */
+            @font-face {
+                font-family:'Hind Bold';
+                font-style: normal;
+                font-weight: 700;
+                src: local('Hind Bold'), local('Hind-Bold'), url(https://fonts.gstatic.com/s/hind/v6/AFoPIhbuX_gBhSszntNC0_Y6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+                unicode-range: U+02BC, U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200B-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+            }
+            /* latin-ext */
+            @font-face {
+                font-family:'Hind Bold';
+                font-style: normal;
+                font-weight: 700;
+                src: local('Hind Bold'), local('Hind-Bold'), url(https://fonts.gstatic.com/s/hind/v6/503ks6dbq2nVdfUL61JyAfY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+                unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+            }
+            /* latin */
+            @font-face {
+                font-family:'Hind Bold';
+                font-style: normal;
+                font-weight: 700;
+                src: local('Hind Bold'), local('Hind-Bold'), url(//font.gstatic.com/s/hind/v6/PQuIEfcr_wdF_zOSNjqWKQ.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+            }
+            /* Reset browser defaults */
+            /* --------------------------------------------------------------
+    Reset default browser CSS.
+    Based on work by Eric Meyer:
+    * http://meyerweb.com/eric/tools/css/reset/index.html
+    -------------------------------------------------------------- */
+            /* v1.0 | 20080212 */
+            html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                font-size: 100%;
+                vertical-align: baseline;
+                background: transparent;
+                letter-spacing: .01em;
+            }
+            body {
+                line-height: 1;
+                background: #FFF;
+                text-align: left;
+            }
+            ol, ul {
+                list-style: none;
+            }
+            blockquote, q {
+                quotes: none;
+            }
+            blockquote:before, blockquote:after, q:before, q:after {
+                content:'';
+                content: none;
+            }
+            /* remember to define focus styles! */
+            :focus {
+                outline: 0;
+            }
+            /* remember to highlight inserts somehow! */
+            ins {
+                text-decoration: none;
+            }
+            del {
+                text-decoration: line-through;
+            }
+            /* tables still need 'cellspacing="0"' in the markup */
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            a img {
+                border: none;
+            }
+            /* Typography */
+            /*START old disc style for LI
+    ul, li {list-style-type: disc; margin: 0 0 0 12px; padding: 0;}
+    ul li {margin: 0 0 0 18px; padding: 0 0 0 3px;}
+    END old disc style for LI*/
+            /*START Image treatment for LI*/
+            /* ul {list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNJREFUeNpiYCAAtIB4OxDfAOIoZIm9QPwfiv8AMT8TVOIvLqMMgPgqEL8F4ky8lgIEGAC+Fgk0YKVkbwAAAABJRU5ErkJggg==");}*/
+            ul, li {
+                list-style:inherit;
+                margin: 5px 0 5px 13px;
+                padding: 1;
+            }
+            ul li {
+                margin: 0 0 0 16px;
+                padding: 0 0 0 3px;
+            }
+            #resumeDoc ul, #resumeDoc li {
+                list-style-type: disc;
+            }
+            /*END Image treatment for LI*/
+            .clear {
+                clear: both;
+                height: 0;
+            }
+            br.clear {
+                line-height: 0;
+            }
+            div.name {
+                font-size: 18px;
+                line-height: 17px;
+                font-weight: 700;
+                padding: 0;
+                text-align: right;
+                color:#1cb684;
+                font-family:'Hind Bold';
+            }
+            div.logo {
+                display: none;
+            }
+            div.heading {
+                clear: both;
+                font-weight: bold;
+            }
+            div.address {
+                position: relative;
+                text-align: right;
+                font-size: 0.917em;
+                line-height: 1.25em;
+                margin-top: 0px;
+            }
+            div.address2 {
+                position: relative;
+                text-align: left;
+                font-size: 0.917em;
+                line-height: 1.25em;
+            }
+            span.jobtitle, span.companyname, span.degree, span.programline {
+                font-weight: inherit;
+            }
+            span.jobtitle, span.degree, span.programline {
+                font-family:'Alegreya Sans Medium';
+            }
+            span.cdesc {
+                font-style: italic;
+            }
+            div#document table {
+                width: 100%;
+            }
+            .table_wrapper {
+                width: 100%;
+                margin-top: 0;
+            }
+            table.twocol td {
+                width: 50%;
+            }
+            table.skills {
+                width: 100%;
+            }
+            table.skills th, table.skills td {
+                width: 20%;
+                text-align: center;
+            }
+            table.skills th {
+                text-decoration: underline;
+            }
+            table.skills .skillname, table.skills .skillrating {
+                text-align: left;
+                width: 35%;
+            }
+            table.skills .skillrating {
+                width: 20%;
+            }
+            table.skills .skillyears, table.skills .skilllast {
+                width: 19%;
+            }
+            table.skills .pad1 {
+                width: 5%;
+            }
+            table.skills .pad2, table.skills .pad3 {
+                width: 1%;
+            }
+            span.paddedline {
+                display: block;
+            }
+            .nodisplay {
+                display: none;
+            }
+            div.lowerborder {
+                padding-top: 2px;
+            }
+            div.resumeTitle, div.execRsmTitle {
+                font-weight: bold;
+                text-align: center;
+            }
+            td.twocol_2 {
+                border-left:1px solid #FEFDFD;
+            }
+            .charspace {
+            }
+            .myGap {
+            }
+            /*FIX for FORCEFULLY making left margin ZERO for CL*/
+            div#document .sectionCL .paragraph {
+                margin-top: 0!important;
+            }
+            /* For RBN1 */
+            div#document {
+                position:relative;
+            }
+            div#document div.sectiontitle {
+                font-family:'Hind Medium';
+                font-weight:500;
+                text-transform:uppercase;
+                padding-top: .7em;
+            }
+            .separator-left {
+                width: 100px;
+                float: left;
+                position: absolute;
+                padding-right:15px;
+                text-align:right;
+                top:auto;
+            }
+            .separator-left .section {
+                margin-top:0;
+            }
+            .separator-main {
+                float:left;
+                border-left:1px solid #dddddb;
+                margin-left:115px;
+            }
+            .separator-left div.name, .separator-left div.address {
+                text-align: right;
+                word-break: break-word;
+                word-wrap: break-word;
+            }
+            .separator-left div.address .field {
+                display:block;
+            }
+            .separator-left div.address .spaced {
+                display: inline;
+            }
+            .namebox span {
+                width:100px;
+                height: 100px;
+                background: #000;
+                text-align: center;
+                font-family:'Alegreya Sans Medium';
+                font-weight: 500;
+                font-size: 52px;
+                color: #1cb684;
+                line-height: 67px;
+                margin-bottom:15px;
+                display:inline-block;
+            }
+            .namebox img {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                border-style: solid;
+                border-width: 1px;
+            }
+            .fontface {
+                font-weight:300;
+            }
+            #document:after {
+                clear: both;
+                content:".";
+            }
+        </style>
+        <style type="text/css" id="unparsed">
+            div#document {
+                line-height: {
+                    $FTLH
+                }
+                px;
+            }
+            div#document table {
+                line-height: {
+                    $FTLH
+                }
+                px;
+            }
+            div#document.pagesize {
+                width: {
+                    $DOCW
+                }
+                px;
+            }
+            div#document.vmargins {
+                padding-top: {
+                    $TBMR
+                }
+                px;
+                padding-bottom: {
+                    $TBMR
+                }
+                px;
+            }
+            div#document.hmargins {
+                padding-left: {
+                    $LRMR
+                }
+                px;
+                padding-right: {
+                    $LRMR
+                }
+                px;
+            }
+            div#document .section {
+                margin-top: {
+                    $SCSP
+                }
+                px;
+            }
+            div#document div.firstsection {
+                margin-top: 0;
+            }
+            div#document div.SECTION_CNTC {
+                margin-top: 0;
+            }
+            div#document div.heading {
+                margin-bottom: {
+                    $SHMB
+                }
+                px;
+            }
+            div#document div.paragraph {
+                margin-top: {
+                    $PSPC
+                }
+                px;
+            }
+            div#document div.firstparagraph {
+                margin-top: 0;
+            }
+            div#document .singlecolumn, div#document .maincolumn {
+                line-height: {
+                    $FTLH
+                }
+                px;
+                width: auto !important;
+            }
+            .fontsize {
+                font-size: {
+                    $FTSZ
+                }
+                px;
+            }
+            .fontface {
+                font-family: {
+                    $FTFC
+                }
+                ;
+            }
+            div#document div.sectiontitle {
+                font-size: {
+                    $HDSZ
+                }
+                px;
+                line-height: {
+                    $HDLH
+                }
+                px;
+            }
+            div.name {
+                font-size: {
+                    $NMSZ
+                }
+                px;
+                line-height: {
+                    $NMLH
+                }
+                px;
+            }
+            div#document .thinbottomborder {
+                border-bottom: {
+                    $LNWT
+                }
+                px solid;
+            }
+            div#document .lowerborder {
+                display: {
+                    $LNWV
+                }
+                ;
+            }
+            div.address {
+                font-size: {
+                    $CISZ
+                }
+                px;
+                line-height: {
+                    $CILH
+                }
+                px;
+            }
+            div#document table.skills td {
+                padding-top: {
+                    $TDMT
+                }
+                px;
+            }
+            div.resumeTitle {
+                font-size: {
+                    $RTTL
+                }
+                px;
+                line-height: {
+                    $RTLH
+                }
+                px;
+            }
+            div.execRsmTitle {
+                font-size: {
+                    $ETTL
+                }
+                px;
+                line-height: {
+                    $ETLH
+                }
+                px;
+            }
+            span.compDescWrap {
+                margin-bottom: {
+                    $CDES
+                }
+                px;
+            }
+            .separator-left {
+                left: {
+                    $LRMR
+                }
+                px;
+            }
+            .separator-main {
+                padding-left: {
+                    $PIND
+                }
+                px;
+                width: {
+                    $MACW
+                }
+                px;
+                min-height: {
+                    $SLVL
+                }
+                px;
+            }
+            /*FIX for Re-calculating width of singlecolumn for CL*/
+            div#document .sectionCL .singlecolumn {
+                margin-left: 0!important;
+                width: 100%;
+                font-size: {
+                    $FTSZ
+                }
+                px;
+            }
+            div.address2 {
+                font-size: {
+                    $FTSZ
+                }
+                px;
+                line-height: {
+                    $FTLH
+                }
+                px;
+            }
+            div#document .sectionDT {
+                margin-top: {
+                    $SCDT
+                }
+                px;
+            }
+        </style>
+        <style type="text/css" id="dynamic">
+            div#document {
+                line-height: 15px;
+            }
+            div#document table {
+                line-height: 15px;
+            }
+            div#document.pagesize {
+                width: 554px;
+            }
+            div#document.vmargins {
+                padding-top: 37px;
+                padding-bottom: 37px;
+            }
+            div#document.hmargins {
+                padding-left: 29px;
+                padding-right: 29px;
+            }
+            div#document .section {
+                margin-top: 6px;
+            }
+            div#document div.firstsection {
+                margin-top: 0;
+            }
+            div#document div.SECTION_CNTC {
+                margin-top: 0;
+            }
+            div#document div.heading {
+                margin-bottom: 2px;
+            }
+            div#document div.paragraph {
+                margin-top: 4px;
+            }
+            div#document div.firstparagraph {
+                margin-top: 0;
+            }
+            div#document .singlecolumn, div#document .maincolumn {
+                line-height: 15px;
+                width: auto !important;
+            }
+            .fontsize {
+                font-size: 11px;
+            }
+            .fontface {
+                font-family: Alegreya Sans Light;
+            }
+            div#document div.sectiontitle {
+                font-size: 14px;
+                line-height: 18px;
+            }
+            div.name {
+                font-size: 17px;
+                line-height: 25px;
+            }
+            div#document .thinbottomborder {
+                border-bottom: 0px solid;
+            }
+            div#document .lowerborder {
+                display: inherit;
+            }
+            div.address {
+                font-size: 11px;
+                line-height: 17px;
+            }
+            div#document table.skills td {
+                padding-top: 8px;
+            }
+            div.resumeTitle {
+                font-size: 13px;
+                line-height: 21px;
+            }
+            div.execRsmTitle {
+                font-size: 12px;
+                line-height: 16px;
+            }
+            strong {letter-spacing: .06em;
+            }
+            span.compDescWrap {
+                margin-bottom: 2px;
+            }
+            .separator-left {
+                left:29px;
+            }
+            .separator-main {
+                padding-left: 13px;
+                width: 410px;
+                min-height:562px;
+            }
+            /*FIX for Re-calculating width of singlecolumn for CL*/
+            div#document .sectionCL .singlecolumn {
+                margin-left: 0!important;
+                width: 100%;
+                font-size: 11px;
+            }
+            div.address2 {
+                font-size: 11px;
+                line-height: 15px;
+            }
+            div#document .sectionDT {
+                margin-top: 11px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="document" class="fontsize fontface vmargins hmargins linespacing pagesize">
+            <div class='separator-left'>
+                <div id="SECTION_NAME6c4b6779-67b3-44fd-84bd-3a8a3826bea8" class="section firstsection" style="padding-top:0px;">
+                    <div id="PARAGRAPH_6c4b6779-67b3-44fd-84bd-3a8a3826bea8_1_43c546c6-6009-4260-96c0-d55c32a3c997" class="paragraph PARAGRAPH_NAME firstparagraph" style="padding-top:NaNpx;">
+                        <div class='namebox'><span><img src="data:image/jpeg;base64,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" width=100></span>
+                        </div>
+                        <div class="name">
+                             <span class="field" id="6c4b6779-67b3-44fd-84bd-3a8a3826bea8FNAM1">Tony</span><span></span>  <span class="field" id="6c4b6779-67b3-44fd-84bd-3a8a3826bea8LNAM1">Mayse</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="SECTION_CNTC62d23f0d-d664-4c28-98e7-96111a33b5a1" class="section SECTION_CNTC" style="padding-top:0px;">
+                    <div id="PARAGRAPH_62d23f0d-d664-4c28-98e7-96111a33b5a1_1_df18a8dc-5555-42f8-9350-6b389c89bdca" class="paragraph PARAGRAPH_CNTC firstparagraph" style="padding-top:0px;">
+                        <div class="address">
+                            <div>
+                                 <span class="field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1CPHN1"></span>
+                                 <span class="field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1HPHN1">503-444-0309</span>
+                                	<span class="field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1OPHN1"></span>
+                                 <span class="field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1FPHN1"></span>
+                            </div>
+
+                            <div>
+                                 <span class="field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1STRT1">8015 SE Flavel St</span>
+                                 <span class="spaced field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1CITY1">Portland</span><span>, </span>
+                                 <span class="spaced field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1STAT1">OR</span><span>, </span>	
+                                 <span class="spaced field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1ZIPC1">97206</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='separator-main'>
+                <div id="SECTION_SUMMfd0da733-9513-4b65-a23c-a4fa210b368e" class="section" style="padding-top:0px;">
+                    <div class="heading">
+                        <div id="SECTNAME_SUMMfd0da733-9513-4b65-a23c-a4fa210b368e" class="sectiontitle" style="padding-top:0px;">Summary</div>
+                    </div>
+                    <div id="PARAGRAPH_fd0da733-9513-4b65-a23c-a4fa210b368e_1_76cf2614-5685-4aad-a658-688f740fc66d" class="paragraph firstparagraph" style="padding-top:NaNpx;">
+                        <div class="field singlecolumn" id="fd0da733-9513-4b65-a23c-a4fa210b368eFRFM1"><span class="">A gifted professional richly experienced in API technologies, product integration, and design specification who wields a solid understanding of web &amp; IT technologies, as well as the finesse to inspire all levels of management &amp; technical staff.</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="SECTION_ACCM917d7910-6c88-4b86-a372-697ca330e1ef" class="section" style="padding-top:0px;">
+                    <div class="heading">
+                        <div id="SECTNAME_ACCM917d7910-6c88-4b86-a372-697ca330e1ef" class="sectiontitle">Career Accomplishments</div>
+                    </div>
+                    <div id="PARAGRAPH_917d7910-6c88-4b86-a372-697ca330e1ef_1_e868b1a7-1262-4ee7-9ec7-e9a86283488f" class="paragraph firstparagraph" style="padding-top:NaNpx;">
+                        <div class="field singlecolumn" id="917d7910-6c88-4b86-a372-697ca330e1efFRFM1">
+                            <ul>
+                                <li>Transformed API and integration support delivery <strong>twice</strong>.</li>
+                                <li>Lead a reactive "computer repair" business through transformation into a proactively managed service provider (MSP) with stable recurring revenue.</li>
+                                <li>Created and deployed a business-critical domain specific language.</li>
+                                <li>Created an AdWords campaign with sustained &amp; unbelievable metrics:
+                                    <br>30% click-through rate (CTR) with 10% bounce rate.&nbsp;</li>
+                                <li><span class="">Reduced technical escalations to API engineering to absolute zero.</span>
+                                    <br>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="SECTION_HILT4a875824-3822-48ce-b543-bfae420bb079" class="section" style="padding-top:0px;">
+                    <div class="heading">
+                        <div id="SECTNAME_HILT4a875824-3822-48ce-b543-bfae420bb079" class="sectiontitle">Areas of Expertise</div>
+                    </div>
+                    <div id="PARAGRAPH_4a875824-3822-48ce-b543-bfae420bb079_1_f5b50db1-ade8-457e-8777-5a918c04f165" class="paragraph firstparagraph" style="padding-top:NaNpx;">
+                        <div class="singlecolumn maincolumn">
+                            <table class="twocol">
+                                <tr>
+                                    <td class="field twocol_1" id="4a875824-3822-48ce-b543-bfae420bb079SKC11">
+                                        <p><strong>Sales Support</strong>
+                                        </p>
+                                        <ul>
+                                            <li>Powerpoint Mastery</li>
+                                            <li>Careful listening</li>
+                                            <li>Proofs of Concept</li>
+                                            <li>Security due diligence</li>
+                                            <li>Creative solutions</li>
+                                            <li>Motivational psychology</li>
+                                            <li>Renewal planning</li>
+                                            <li>Business Analysis</li>
+                                        </ul>
+                                        <div><strong>Customer Engagement​</strong>
+                                        </div>
+                                        <ul>
+                                            <li>Policy &amp; procedure</li>
+                                            <li>Documentation</li>
+                                            <li>Tone matching</li>
+                                            <li>De-escalation</li>
+                                            <li>Root cause analysis (RCA)</li>
+                                            <li>Excellent communication</li>
+                                            <li>Extensive varied experience&nbsp;</li>
+                                        </ul>
+                                    </td>
+                                    <td class="field twocol_2" id="4a875824-3822-48ce-b543-bfae420bb079SKC21">
+                                        <p><strong>Development</strong>
+                                            <br>
+                                        </p>
+                                        <ul>
+                                            <li style="text-align: left;">Python, Ruby, Groovy</li>
+                                            <li style="text-align: left;">JavaScript, Clojure &amp; ClojureScript</li>
+                                            <li style="text-align: left;">PHP, C, Pascal, and more</li>
+                                            <li style="text-align: left;">Waterfall, Agile, Scrum, Kanban</li>
+                                            <li style="text-align: left;">Rich API integration experience</li>
+                                            <li style="text-align: left;">API specification &amp; development</li>
+                                        </ul>
+                                        <p><strong>Information Technology</strong>
+                                        </p>
+                                        <ul>
+                                            <li>Windows &amp; Linux Server &amp; Desktop</li>
+                                            <li>OS X, IllumOS, SVR4</li>
+                                            <li>Java Runtime (JRE)</li>
+                                            <li>Networking &amp; Security</li>
+                                            <li>Business Continuity</li>
+                                            <li>Disaster Planning</li>
+                                            <li>Malware prevention &amp; recovery</li>
+                                            <li>Tested Backup &amp; Restore</li>
+                                            <li>Master Troubleshooter</li>
+                                        </ul>
+                                        <p></p>
+                                        <p></p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="SECTION_SKLL84c159e1-e9eb-47f0-b41e-97ce25bd506f" class="section" style="padding-top:0px;">
+                    <div class="heading">
+                        <div id="SECTNAME_SKLL84c159e1-e9eb-47f0-b41e-97ce25bd506f" class="sectiontitle">More Skills</div>
+                    </div>
+                    <div id="PARAGRAPH_84c159e1-e9eb-47f0-b41e-97ce25bd506f_1_e03070fc-e796-4c40-aa7f-36cc7426d45a" class="paragraph firstparagraph" style="padding-top:NaNpx;">
+                        <div class="field singlecolumn" id="84c159e1-e9eb-47f0-b41e-97ce25bd506fFRFM1">
+                            <ul>
+                                <li style="text-align: left;">SaaS, Startup, Full-stack Web Application &amp; Internet technologies</li>
+                                <li style="text-align: left;">SOAP, REST, GraphQL, API Development &amp; Integration</li>
+                                <li style="text-align: left;">SDLC, CI/CD, SOA, Jira, TFS, git, production analytics&nbsp;</li>
+                                <li style="text-align: left;">IT Infrastructure, Requirements Analysis, Performance Monitoring</li>
+                                <li style="text-align: left;">Negotiation, Leadership, Enthusiasm, Integrity, Tact&nbsp;</li>
+                                <li style="text-align: left;">Problem Resolution, Team Building, Strategic Planning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="SECTION_EXPRdcbe37e8-c349-41f7-89a0-4927e4ae7625" class="section" style="padding-top:0px;">
+                    <div class="heading">
+                        <div id="SECTNAME_EXPRdcbe37e8-c349-41f7-89a0-4927e4ae7625" class="sectiontitle">Experience</div>
+                    </div>
+                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_1_ad40d540-fedb-4793-acf7-f0b341b55a8c" class="paragraph firstparagraph" style="padding-top:NaNpx;">
+                        <div class="singlecolumn">
+                             <span class="paddedline">
+
+              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT1">Solutions Consultant</span>
+                            <br>
+                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT1">Portland</span><span>, </span>
+                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA1">Oregon</span>
+                            </span>
+                            	<span class="paddedline">
+
+              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP1">Healthnotes</span><span>/</span>
+                             <span class="datesWrapper">
+
+                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD1">Apr 2016</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT1">Feb 2018</span>
+                            </span>
+                            </span>
+                             <span class="paddedline">
+
+              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES1"><ul><li><span class="">Prepared and presented visually appealing and persuasive technical proposals for clients.</span>
+                            </li>
+                            <li><span class="">Troubleshooted and resolved web application issues escalated from customer support and other departments with a 100% success customer satisfaction.</span>
+                            </li>
+                            <li><span class="">Lead the monitoring and reporting on website traffic and performance, SEO &amp; keyword performance, and trend analysis for dozens of sites.</span>
+                            </li>
+                            <li><span class="">Developed web-site mock-ups for clients to ensure quality control and client satisfaction before project development phase.</span>
+                            </li>
+                            <li>Guided project managers and developers through integration, testing, deployment, and monitoring.</li>
+                            <li><span class="">Acted as Voice of the Customer to translate needs to internal product teams. </span>
+                            </li>
+                            <li><span class="">Analyzed key performance indicators to measure product engagement.</span>
+                            </li>
+                            <li><span class="">Gathered and analyzed corporate &amp; market information then used findings to inform product &amp; sales/renewal strategy. </span>
+                            </li>
+                            <li><span class=""><span class="">Planned various product configurations to meet diverse customer needs.</span></span>
+                            </li>
+                            <li><span class=""><span class=""><span class="">Kept current on the practices associated with regulatory laws: DSHEA, FSMA, HIPAA</span></span>
+                                </span>
+                            </li>
+                            <li><span class=""><span class=""><span class=""><span class="">Assisted sales team in defining customer requirements and expectations while providing practical achievable solutions&nbsp;</span>.</span>
+                                </span>
+                                </span>
+                                <br>
+                            </li>
+                            </ul>
+                            <p></p>
+                            </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_2_b8b3982f-d9a5-4703-871a-6f511ed3fe79" class="paragraph" style="padding-top:NaNpx;">
+                        <div class="singlecolumn">
+                             <span class="paddedline">
+
+              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT2">Solutions Engineer</span>
+                            <br>
+                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT2">Portland</span><span>, </span>
+                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA2">Oregon</span>
+                            </span>
+                            	<span class="paddedline">
+
+              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP2">SurveyMonkey</span><span>/</span>
+                             <span class="datesWrapper">
+
+                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD2">Nov 2013</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT2">Jan 2016</span>
+                            </span>
+                            </span>
+                             <span class="paddedline">
+
+              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES2"><ul><li><span class="">Created API proofs of concept that reinforced trust, increased security and made it easier for customers to do the right thing instead of the easy thing.</span>
+                            </li>
+                            <li><span class=""></span><span class="">Conducted design and code reviews to share knowledge with development team, product management, and customer support.</span>
+                            </li>
+                            <li><span class=""></span><span class="">Developed training materials targeted internally and externally.</span>
+                            </li>
+                            <li><span class=""></span><span class="">Established requirements for new systems and modifications. </span>
+                            </li>
+                            <li><span class=""></span><span class="">Worked on large enterprise and business critical applications. </span>
+                                <br>
+                            </li>
+                            </ul>
+                            <ul></ul>
+                            </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_3_0f69aa07-62ae-4245-8966-dc794495f130" class="paragraph" style="padding-top:NaNpx;">
+                        <div class="singlecolumn">
+                             <span class="paddedline">
+
+              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT3">Technical Support Engineer</span>
+                            <br>
+                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT3">Portland</span><span>, </span>
+                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA3">Oregon</span>
+                            </span>
+                            	<span class="paddedline">
+
+              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP3">New Relic</span><span>/</span>
+                             <span class="datesWrapper">
+
+                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD3">Sep 2012</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT3">Oct 2013</span>
+                            </span>
+                            </span>
+                             <span class="paddedline">
+
+              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES3"><ul><li><span class="">Mentored new support engineers in-depth on Application Performance Monitoring technologies, customer service, and process.</span>
+                            </li>
+                            <li><span class="">Mastered composure and patience in face of difficult customer situations. </span>
+                                <br>
+                            </li>
+                            <li><span class="">Closed an average of 30 inbound technical support requests daily.</span>
+                            </li>
+                            <li><span class="">Inspired process refinement to improve customer service and support, reduce escalations, and improve product feedback.</span>
+                            </li>
+                            <li><span class=""></span>Achieved superior department-wide technical and troubleshooting accuracy through case review and root cause analysis.</li>
+                            <li>Last technical escalation point within the support department.</li>
+                            </ul>
+                            </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_4_677d1e20-0701-43ed-9011-f2b820c9bb6b" class="paragraph" style="padding-top:NaNpx;">
+                        <div class="singlecolumn">
+                             <span class="paddedline">
+
+              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT4">Customer Support Technician (abbreviated)</span>
+                            <br>
+                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT4">Remote</span>
+                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA4"></span>
+                            </span>
+                            	<span class="paddedline">
+
+              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP4">Sutherland Global Services</span><span>/</span>
+                             <span class="datesWrapper">
+
+                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD4">Jun 2011</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT4">Aug 2012</span>
+                            </span>
+                            </span>
+                             <span class="paddedline">
+
+              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES4"><ul><li>This was a simple, part-time no-brainer transitional job providing high speed internet support & customer service,  PC & Mac troubleshooting, and service dispatch.</li></ul></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_5_50c42629-f7e8-4b4d-8d8f-b7eab45e77ae" class="paragraph" style="padding-top:NaNpx;">
+                        <div class="singlecolumn">
+                             <span class="paddedline">
+
+              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT5">Owner, Co-CEO</span>
+                            <br>
+                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT5">Tryon</span><span>, </span>
+                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA5">North Carolina</span>
+                            </span>
+                            	<span class="paddedline">
+
+              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP5">High Tech House Call, LLC</span><span>/</span>
+                             <span class="datesWrapper">
+
+                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD5">Jan 2008</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT5">Jun 2011</span>
+                            </span>
+                            </span>
+                             <span class="paddedline">
+
+              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES5"><ul><li>Full-service information technology service &amp; outsourcing  </li><li>In-shop PC &amp; Mac hardware &amp; software repair  </li><li>On-site PC, server, networking, &amp; printer support  </li><li>WAN: fiber optic, metropolitan Wi-Fi, DSL, metropolitan Ethernet, VPN  </li><li>LAN: Wi-Fi, VoIP, fiber &amp; copper gigabit Ethernet, firewall  </li><li>Remote management &amp; monitoring (RMM)  Multiple </li><li>OSs: Linux server &amp; desktop, Windows server &amp; desktop, NexentaStor, OS X </li><li> Disaster preparedness &amp; recovery, malware prevention &amp; recovery  </li><li>Technology planning &amp; implementation: long-term goals &amp; business cases </li><li> Marketing: web pages, AdWords, print</li><li> Vendor relationship development &amp; maintenance  </li><li>Process development &amp; maintenance.</li></ul></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_6_450e9770-26e9-4ef3-9c97-93c9c981dd89" class="paragraph" style="padding-top:NaNpx;">
+                        <div class="singlecolumn">
+                             <span class="paddedline">
+
+              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT6">Co-Owner/Operator (abbreviated)</span>
+                            <br>
+                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT6">Tryon</span><span>, </span>
+                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA6">North Carolina</span>
+                            </span>
+                            	<span class="paddedline">
+
+              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP6">The Historic Melrose Inn</span><span>/</span>
+                             <span class="datesWrapper">
+
+                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD6">Aug 2006</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT6">Nov 2008</span>
+                            </span>
+                            </span>
+                             <span class="paddedline">
+
+              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES6"><ul><li>Marketing: web pages, AdWords, various print</li><li>Front desk, customer service, reservations, facility maintenance</li><li>Staffing for events, restaurant &amp; lodging  workforce (hire/fire)</li><li>Event planning, chef, much more (everything else)</li></ul></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_7_6f5d4908-ed27-4a4d-8d14-b750ebc9607c" class="paragraph" style="padding-top:NaNpx;">
+                        <div class="singlecolumn">
+                             <span class="paddedline">
+
+              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT7">Electronic Data Systems (EDS)</span>
+                            <br>
+                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT7">Miramar</span><span>, </span>
+                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA7">Florida</span>
+                            </span>
+                            	<span class="paddedline">
+
+              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP7"></span>
+                             <span class="datesWrapper">
+
+                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD7">Jan 1996</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT7">Aug 2006</span>
+                            </span>
+                            </span>
+                             <span class="paddedline">
+
+              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES7"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_8_f648efce-510b-4467-81a8-e4029e2d1bf7" class="paragraph" style="padding-top:NaNpx;">
+                        <div class="singlecolumn">
+                             <span class="paddedline">
+
+              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT8">IT Problem Manager</span>
+                            <br>
+                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT8"></span>
+                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA8"></span>
+                            </span>
+                            	<span class="paddedline">
+
+              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP8"></span>
+                             <span class="datesWrapper">
+
+                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD8">Jan 2001</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT8">Jan 2006</span>
+                            </span>
+                            </span>
+                             <span class="paddedline">
+
+              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES8"><ul><li>Critical response: vigilance &amp; response to critical, high business impact &amp; high visibility IT infrastructure degradations &amp; outages</li><li>Broad     IT knowledge: responsible for understanding any &amp; all technology employed across the entire enterprise</li><li>Distributed   server architectures, mainframe computing, and embedded systems </li><li> Resolution    coordination: when problems weren't being resolved, my team engaged the appropriate teams  Information    coordination: keep management and end users informed of progress toward problem resolution</li><li>Collaboration    leadership: connected dissimilar teams to solve unusual problems</li></ul></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_9_2a369518-2024-455d-89b4-f129b5704f01" class="paragraph" style="padding-top:NaNpx;">
+                        <div class="singlecolumn">
+                             <span class="paddedline">
+
+              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT9">Technical Assistant (team leader)</span>
+                            <br>
+                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT9"></span>
+                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA9"></span>
+                            </span>
+                            	<span class="paddedline">
+
+              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP9"></span>
+                             <span class="datesWrapper">
+
+                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD9">Jan 2000</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT9">Jan 2001</span>
+                            </span>
+                            </span>
+                             <span class="paddedline">
+
+              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES9"><ul><li>Mentoring & Quality Assurance: supervise & train team members to ensure quality & continuous technical and service improvement as well as career development.</li><li>Tech support escalation: 2nd tier in a 2-tier support structure </li><li>General oversight: time recording, general coaching & guidance</li><li>Quality assurance: call monitoring, case review</li><li>Customer service mentoring: train team members to ensure continuous improvement</li></ul></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_10_00e90622-f7a4-4df6-9e15-78c21ba8fc23" class="paragraph" style="padding-top:NaNpx;">
+                        <div class="singlecolumn">
+                             <span class="paddedline">
+
+              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT10">Technical Support Engineer</span>
+                            <br>
+                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT10"></span>
+                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA10"></span>
+                            </span>
+                            	<span class="paddedline">
+
+              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP10"></span>
+                             <span class="datesWrapper">
+
+                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD10">Jan 1996</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT10">Jan 2000</span>
+                            </span>
+                            </span>
+                             <span class="paddedline">
+
+              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES10"><ul><li>First level tech support: single point of contact for travel related technical systems </li><li>Extensive troubleshooting: LAN &amp; WAN, client/server, mainframe access, printer trouble</li><li>Customer service: clear &amp; repeated process, de-escalation, clear expectations, complete follow-through.</li></ul></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_11_bcaa0001-f572-426a-bcb7-68ae109e8fcc" class="paragraph" style="padding-top:NaNpx;">
+                        <div class="singlecolumn">
+                             <span class="paddedline">
+
+              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT11">Application Developer/System Programmer</span>
+                            <br>
+                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT11">Orlando</span><span>, </span>
+                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA11">Florida</span>
+                            </span>
+                            	<span class="paddedline">
+
+              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP11">Ticketmaster South</span><span>/</span>
+                             <span class="datesWrapper">
+
+                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD11">Sep 1993</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT11">Dec 1995</span>
+                            </span>
+                            </span>
+                             <span class="paddedline">
+
+              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES11"><ul><li>Pascal &amp; Visual BASIC  Application development: In-house needs &amp; special client requests</li><li>Day-to-day data center assistance: networking, troubleshooting, Micro-VAX &amp; RS-232.</li></ul></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="SECTION_EDUCa37ae312-a37f-4b19-bf33-b3d11f43d895" class="section" style="padding-top:0px;">
+                    <div class="heading">
+                        <div id="SECTNAME_EDUCa37ae312-a37f-4b19-bf33-b3d11f43d895" class="sectiontitle">Education and Training</div>
+                    </div>
+                    <div id="PARAGRAPH_a37ae312-a37f-4b19-bf33-b3d11f43d895_1_e3dc121b-a41b-4c6e-95c9-7461729e7790" class="paragraph firstparagraph" style="padding-top:NaNpx;">
+                        <div class="singlecolumn">
+                             <span class="paddedline">
+
+              <span class="degree" id="a37ae312-a37f-4b19-bf33-b3d11f43d895DGRE1">Associate of Arts</span><span>: </span>
+                             <span class="programline" id="a37ae312-a37f-4b19-bf33-b3d11f43d895STUY1">Humanities with Honors</span>
+                            </span>
+                            	<span class="paddedline">
+
+              <span class="companyname companyname_educ" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SCHO1">Valencia Community College</span><span></span>
+
+                            </span>
+                             <span class="paddedline">
+
+              <span class="joblocation jobcity" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SCIT1">Orlando</span><span>, </span>
+                             <span class="joblocation jobstate" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SSTA1">FL</span>
+                             <span class="joblocation jobstate" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SCNT1"></span>
+                            </span>
+
+                             <span class="paddedline">
+
+              <span class="field" id="a37ae312-a37f-4b19-bf33-b3d11f43d895FRFM1"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="PARAGRAPH_a37ae312-a37f-4b19-bf33-b3d11f43d895_2_dc556190-a13c-4ca2-91de-41f81ac54e3c" class="paragraph" style="padding-top:NaNpx;">
+                        <div class="singlecolumn">
+                             <span class="paddedline">
+
+              <span class="degree" id="a37ae312-a37f-4b19-bf33-b3d11f43d895DGRE2">Master of Arts - incomplete</span><span>: </span>
+                             <span class="programline" id="a37ae312-a37f-4b19-bf33-b3d11f43d895STUY2">Interior Design</span>
+                            </span>
+                            	<span class="paddedline">
+
+              <span class="companyname companyname_educ" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SCHO2">University of Miami International School of Art & Design</span><span></span>
+
+                            </span>
+                             <span class="paddedline">
+
+              <span class="joblocation jobcity" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SCIT2">Miami</span><span>, </span>
+                             <span class="joblocation jobstate" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SSTA2">FL</span>
+                             <span class="joblocation jobstate" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SCNT2"></span>
+                            </span>
+
+                             <span class="paddedline">
+
+              <span class="field" id="a37ae312-a37f-4b19-bf33-b3d11f43d895FRFM2"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="SECTION_AFIL1d802d58-e8ad-436f-a3fc-fbdfafb9049b" class="section" style="padding-top:0px;">
+                    <div class="heading">
+                        <div id="SECTNAME_AFIL1d802d58-e8ad-436f-a3fc-fbdfafb9049b" class="sectiontitle">Community Service</div>
+                    </div>
+                    <div id="PARAGRAPH_1d802d58-e8ad-436f-a3fc-fbdfafb9049b_1_923c75ac-8f91-4a25-be88-2b21c8605d9a" class="paragraph firstparagraph" style="padding-top:NaNpx;">
+                        <div class="field singlecolumn" id="1d802d58-e8ad-436f-a3fc-fbdfafb9049bFRFM1">
+                            <div>Former Director &amp; Webmaster: Oregon Bears, Inc. Portland, OR</div>
+                            <div>Former Media Secretary and Director: Tryon Downtown Development Association Tryon, NC</div>
+                            <div>Former President of the Board of Directors: Theatre Downtown Orlando, FL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
