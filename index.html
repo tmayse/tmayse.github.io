@@ -9,7 +9,7 @@
             <style>
             
             
-            html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+            html, body, div, span, p, a, img, strong, ul, li, table, tbody, tr, td {
                 margin: 0;
                 padding: 0;
                 border: 0;
@@ -25,46 +25,26 @@
                 text-align: left;
                 
             }
-            ol, ul {
+            ul {
                 list-style: none;
-            }
-            
-            ins {
-                text-decoration: none;
-            }
-            del {
-                text-decoration: line-through;
             }
             
             table {
                 border-collapse: collapse;
                 border-spacing: 0;
             }
-            a img {
-                border: none;
-            }
             
             ul, li {
                 list-style: inherit;
-                margin: 1.7vw 0 1.9vw 1vw;
                 padding-left: 3vw;
             }
             ul li {
                 margin: 0 0 1vw 0;
                 padding: 0;
             }
-            ul li: : after{
+            td ul{
+                margin:1vw 0 2vw 0;
               
-            }
-            #resumeDoc ul, #resumeDoc li {
-                list-style-type: disc;
-            }
-            .clear {
-                clear: both;
-                height: 0;
-            }
-            br.clear {
-                line-height: 0;
             }
             div.name {
                 font-size: 1vw;
@@ -74,9 +54,6 @@
                 text-align: right;
                 color: #1cb684;
                 font-family: 'Alegreya Sans', sans-serif;;
-            }
-            div.logo {
-                display: none;
             }
             div.heading {
                 clear: both;
@@ -92,74 +69,33 @@
             span.jobtitle {
                 font-weight:600;
             }
-            span.companyname,  span.degree, span.programline {
+            span.jobline{
+                padding-top: 1.5vw;
+                padding-bottom: 1vw;
+                display: block;
+            }
+            span.summary{
+                font-size:2.3vw;
+                line-height: 2.7vw;
+                
+            }
+            span.companyname,  span.degree,  span.programline {
                 font-weight: 500;
             }
             span.jobtitle, span.degree, span.programline {
                 font-family: 'Alegreya Sans Medium', sans-serif;
             }
-            span.cdesc {
-                font-style: italic;
-            }
             div#document table {
                 width: 100%;
-            }
-            .table_wrapper {
-                width: 100%;
-                margin-top: 0;
             }
             table.twocol td {
                 width: 50%;
             }
-            table.skills {
-                width: 100%;
-            }
-            table.skills th, table.skills td {
-                width: 20%;
-                text-align: center;
-            }
-            table.skills th {
-                text-decoration: underline;
-            }
-            table.skills .skillname, table.skills .skillrating {
-                text-align: left;
-                width: 35%;
-            }
-            table.skills .skillrating {
-                width: 20%;
-            }
-            table.skills .skillyears, table.skills .skilllast {
-                width: 19%;
-            }
-            table.skills .pad1 {
-                width: 5%;
-            }
-            table.skills .pad2, table.skills .pad3 {
-                width: 1%;
-            }
             span.paddedline {
                 display: block;
             }
-            .nodisplay {
-                display: none;
-            }
-            div.lowerborder {
-                padding-top: 2px;
-            }
-            div.resumeTitle, div.execRsmTitle {
-                font-weight: bold;
-                text-align: center;
-            }
             td.twocol_2 {
                 border-left: .2vw solid #FEFDFD;
-            }
-            .charspace {
-            }
-            .myGap {
-            }
-            
-            div#document .sectionCL .paragraph {
-                margin-top: 0 !important;
             }
             
             div#document {
@@ -169,10 +105,10 @@
                 font-family: 'Alegreya Sans', sans-serif;;
                 font-weight: 500;
                 text-transform: uppercase;
-                padding-top: .5vw;
+                padding-top: .8vw;
             }
             .separator-left {
-                width: 15vw;
+                width: 16vw;
                 float: right;
                 position: absolute;
                 padding-right: 10vw;
@@ -224,8 +160,6 @@
                 clear: both;
                 content: ".";
             }
-        </style>
-        <style type="text/css" id="dynamic">
             div#document {
                 line-height: 1.1vw;
             }
@@ -233,7 +167,7 @@
                 line-height: 2.2vw;
             }
             div#document.pagesize {
-                width: 95vw;
+                width: 100vw;
             }
             div#document.vmargins {
                 padding-top: 1vw;
@@ -254,10 +188,11 @@
             }
 
             div#document div.paragraph {
-                margin-top: 1vw;
+                margin-bottom: .8vw;
             }
             div#document div.firstparagraph {
                 margin-top: 0;
+                line-height: 2vw !important;
             }
             div#document .singlecolumn, div#document .maincolumn {
                 line-height: 2.2vw;
@@ -270,52 +205,23 @@
                 font-family: "Alegreya Sans", sans-serif;
                 font-weight: 100 !important;
             }
-            div#document div.sectiontitle table{
-                font-size: 2.5vw;
-                line-height: 3vw;
-            }
             div.name {
                 font-size: 2.5vw;
                 line-height: 3vw;
             }
-            div#document .thinbottomborder {
-                border-bottom: 0px solid;
-            }
-            div#document .lowerborder {
-                display: inherit;
-            }
             div.address {
+                padding-top: 1vw;
                 font-size: 2vw;
                 line-height: 3vw;
             }
-            div#document table.skills td {
-                padding-top: .1vw;
-            }
-            div.resumeTitle {
-                font-size: 1.2vw;
-                line-height: 1.3vw;
-            }
-            div.execRsmTitle {
-                font-size: 1em;
-                line-height: 1.1em;
-            }
             strong {letter-spacing: .2vw;
             }
-            span.compDescWrap {
-                margin-bottom: 2px;
-            }
             .separator-left {
-                left: 1em;
+                left: 1.6vw;
             }
             .separator-main {
-                padding-left: 2vw;
-                width: 70vw;
-            }
-            
-            div#document .sectionCL .singlecolumn {
-                margin-left: 0 !important;
-                width: 100%;
-                font-size: 1vw;
+                padding-left: 3vw;
+                width: 67vw;
             }
 
         </style> 
@@ -324,30 +230,33 @@
     <body>
         <div id="document" class="fontsize fontface vmargins hmargins linespacing pagesize">
             <div class='separator-left'>
-                <div id="SECTION_NAME6c4b6779-67b3-44fd-84bd-3a8a3826bea8" class="section firstsection" style="padding-top: 0px;">
-                    <div id="PARAGRAPH_6c4b6779-67b3-44fd-84bd-3a8a3826bea8_1_43c546c6-6009-4260-96c0-d55c32a3c997" class="paragraph PARAGRAPH_NAME firstparagraph" style="padding-top: NaNpx;">
+                <div  class="section firstsection">
+                    <div  class="paragraph PARAGRAPH_NAME firstparagraph" style="padding-top: NaNpx;">
                         <div class='namebox'><span><img src="data: image/jpeg;base64,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" width=100></span>
                         </div>
                         <div class="name">
-                             <span class="field" id="6c4b6779-67b3-44fd-84bd-3a8a3826bea8FNAM1">Tony</span><span></span>  <span class="field" id="6c4b6779-67b3-44fd-84bd-3a8a3826bea8LNAM1">Mayse</span>
+                             <span class="field" >Tony</span><span></span>  <span class="field" >Mayse</span>
+                        </div>
+                        <div class="name">
+                             <span class="field" >Sales Engineer</span>
                         </div>
                     </div>
                 </div>
-                <div id="SECTION_CNTC62d23f0d-d664-4c28-98e7-96111a33b5a1" class="section SECTION_CNTC" style="padding-top: 0px;">
-                    <div id="PARAGRAPH_62d23f0d-d664-4c28-98e7-96111a33b5a1_1_df18a8dc-5555-42f8-9350-6b389c89bdca" class="paragraph PARAGRAPH_CNTC firstparagraph" style="padding-top: 0px;">
+                <div  class="section SECTION_CNTC" style="padding-top: 0px;">
+                    <div  class="paragraph PARAGRAPH_CNTC firstparagraph" style="padding-top: 0px;">
                         <div class="address">
                             <div>
-                                 <span class="field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1CPHN1"></span>
-                                 <span class="field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1HPHN1">503-444-0309</span>
-                                	<span class="field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1OPHN1"></span>
-                                 <span class="field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1FPHN1"></span>
+                                 <span class="field" ></span>
+                                 <span class="field" >503-444-0309</span>
+                                	<span class="field" ></span>
+                                 <span class="field" ></span>
                             </div>
 
                             <div>
-                                 <span class="field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1STRT1">8015 SE Flavel St</span>
-                                 <span class="spaced field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1CITY1">Portland</span><span>, </span>
-                                 <span class="spaced field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1STAT1">OR</span><span>, </span>
-                                 <span class="spaced field" id="62d23f0d-d664-4c28-98e7-96111a33b5a1ZIPC1">97206</span>
+                                 <span class="field" >8015 SE Flavel St</span>
+                                 <span class="spaced field" >Portland</span><span>, </span>
+                                 <span class="spaced field" >OR</span><span>, </span>
+                                 <span class="spaced field" >97206</span>
                             </div>
                         </div>
                         <span class="email field" ><a href="mailto: iamtonymayse@gmail.com">iamtonymayse@gmail.com</a></span>
@@ -355,21 +264,23 @@
                 </div>
             </div>
             <div class='separator-main'>
-                <div id="SECTION_SUMMfd0da733-9513-4b65-a23c-a4fa210b368e" class="section" style="padding-top: 0px;">
+                <div  class="section" style="padding-top: 0px;">
                     <div class="heading">
-                        <div id="SECTNAME_SUMMfd0da733-9513-4b65-a23c-a4fa210b368e" class="sectiontitle" style="padding-top: 0px;">Summary</div>
+                        <div  class="sectiontitle" style="padding-top: 0px;">Summary</div>
                     </div>
-                    <div id="PARAGRAPH_fd0da733-9513-4b65-a23c-a4fa210b368e_1_76cf2614-5685-4aad-a658-688f740fc66d" class="paragraph firstparagraph" style="padding-top: NaNpx;">
-                        <div class="field singlecolumn" id="fd0da733-9513-4b65-a23c-a4fa210b368eFRFM1"><span class="">A gifted professional richly experienced in API technologies, product integration, and design specification who wields a solid understanding of web &amp; IT technologies, as well as the finesse to inspire all levels of management &amp; technical staff.</span>
+                    <div  class="paragraph firstparagraph" style="padding-top: NaNpx;">
+                        <div class="field singlecolumn" ><span class="summary">A gifted professional richly experienced in API technologies, product integration, and design specification who wields a solid understanding of web &amp; IT technologies, as well as the finesse to inspire all levels of management &amp; technical staff by delivering targeted presentations and pragmatic solutions.
+                        </span>
+
                         </div>
                     </div>
                 </div>
-                <div id="SECTION_ACCM917d7910-6c88-4b86-a372-697ca330e1ef" class="section" style="padding-top: 0px;">
+                <div  class="section" style="padding-top: 0px;">
                     <div class="heading">
-                        <div id="SECTNAME_ACCM917d7910-6c88-4b86-a372-697ca330e1ef" class="sectiontitle">Career Accomplishments</div>
+                        <div  class="sectiontitle">Career Accomplishments</div>
                     </div>
-                    <div id="PARAGRAPH_917d7910-6c88-4b86-a372-697ca330e1ef_1_e868b1a7-1262-4ee7-9ec7-e9a86283488f" class="paragraph firstparagraph" style="padding-top: NaNpx;">
-                        <div class="field singlecolumn" id="917d7910-6c88-4b86-a372-697ca330e1efFRFM1">
+                    <div  class="paragraph firstparagraph" style="padding-top: NaNpx;">
+                        <div class="field singlecolumn" >
                             <ul>
                                 <li>Transformed API and integration support delivery <strong>twice</strong>.</li>
                                 <li>Lead a reactive "computer repair" business through transformation into a proactively managed service provider (MSP) with stable recurring revenue.</li>
@@ -383,15 +294,15 @@
                         </div>
                     </div>
                 </div>
-                <div id="SECTION_HILT4a875824-3822-48ce-b543-bfae420bb079" class="section" style="padding-top: 0px;">
+                <div  class="section" style="padding-top: 0px;">
                     <div class="heading">
-                        <div id="SECTNAME_HILT4a875824-3822-48ce-b543-bfae420bb079" class="sectiontitle">Areas of Expertise</div>
+                        <div  class="sectiontitle">Areas of Expertise</div>
                     </div>
-                    <div id="PARAGRAPH_4a875824-3822-48ce-b543-bfae420bb079_1_f5b50db1-ade8-457e-8777-5a918c04f165" class="paragraph firstparagraph" style="padding-top: NaNpx;">
+                    <div  class="paragraph firstparagraph" style="padding-top: NaNpx;">
                         <div class="singlecolumn maincolumn">
                             <table class="twocol">
                                 <tr>
-                                    <td class="field twocol_1" id="4a875824-3822-48ce-b543-bfae420bb079SKC11">
+                                    <td class="field twocol_1" >
                                         <p><strong>Sales Support</strong>
                                         </p>
                                         <ul>
@@ -412,11 +323,12 @@
                                             <li>Tone matching</li>
                                             <li>De-escalation</li>
                                             <li>Root cause analysis (RCA)</li>
-                                            <li>Excellent communication</li>
+                                            <li>Clear persuasive communication</li>
+                                            <li>Conference Command & Control</li>
                                             <li>Extensive varied experience&nbsp;</li>
                                         </ul>
                                     </td>
-                                    <td class="field twocol_2" id="4a875824-3822-48ce-b543-bfae420bb079SKC21">
+                                    <td class="field twocol_2" >
                                         <p><strong>Development</strong>
                                             <br>
                                         </p>
@@ -431,7 +343,7 @@
                                         <p><strong>Information Technology</strong>
                                         </p>
                                         <ul>
-                                            <li>Windows &amp; Linux Server &amp; Desktop</li>
+                                            <li>Windows &amp; Linux<br>Server &amp; Desktop</li>
                                             <li>OS X, IllumOS, SVR4</li>
                                             <li>Java Runtime (JRE)</li>
                                             <li>Networking &amp; Security</li>
@@ -449,15 +361,16 @@
                         </div>
                     </div>
                 </div>
-                <div id="SECTION_SKLL84c159e1-e9eb-47f0-b41e-97ce25bd506f" class="section" style="padding-top: 0px;">
+                <div  class="section" style="padding-top: 0px;">
                     <div class="heading">
-                        <div id="SECTNAME_SKLL84c159e1-e9eb-47f0-b41e-97ce25bd506f" class="sectiontitle">More Skills</div>
+                        <div  class="sectiontitle">More Skills</div>
                     </div>
-                    <div id="PARAGRAPH_84c159e1-e9eb-47f0-b41e-97ce25bd506f_1_e03070fc-e796-4c40-aa7f-36cc7426d45a" class="paragraph firstparagraph" style="padding-top: NaNpx;">
-                        <div class="field singlecolumn" id="84c159e1-e9eb-47f0-b41e-97ce25bd506fFRFM1">
+                    <div  class="paragraph firstparagraph" style="padding-top: NaNpx;">
+                        <div class="field singlecolumn" >
                             <ul>
                                 <li style="text-align: left;">SaaS, Startup, Full-stack Web Application &amp; Internet technologies</li>
-                                <li style="text-align: left;">SOAP, REST, GraphQL, API Development &amp; Integration</li>
+                                <li style="text-align: left;">SOAP, REST, GraphQL, API Development &amp; Integration, SAML, 
+                                OAuth</li>
                                 <li style="text-align: left;">SDLC, CI/CD, SOA, Jira, TFS, git, production analytics&nbsp;</li>
                                 <li style="text-align: left;">IT Infrastructure, Requirements Analysis, Performance Monitoring</li>
                                 <li style="text-align: left;">Negotiation, Leadership, Enthusiasm, Integrity, Tact&nbsp;</li>
@@ -466,31 +379,31 @@
                         </div>
                     </div>
                 </div>
-                <div id="SECTION_EXPRdcbe37e8-c349-41f7-89a0-4927e4ae7625" class="section" style="padding-top: 0px;">
+                <div  class="section" style="padding-top: 0px;">
                     <div class="heading">
-                        <div id="SECTNAME_EXPRdcbe37e8-c349-41f7-89a0-4927e4ae7625" class="sectiontitle">Experience</div>
+                        <div  class="sectiontitle">Experience</div>
                     </div>
-                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_1_ad40d540-fedb-4793-acf7-f0b341b55a8c" class="paragraph firstparagraph" style="padding-top: NaNpx;">
+                    <div  class="paragraph firstparagraph" style="padding-top: NaNpx;">
                         <div class="singlecolumn">
                              <span class="paddedline">
 
-              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT1">Solutions Consultant</span>
+              <span class="jobtitle" >Solutions Consultant</span>
                             <br>
-                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT1">Portland</span><span>, </span>
-                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA1">Oregon</span>
+                             <span class="joblocation jobcity" >Portland</span><span>, </span>
+                             <span class="joblocation jobstate" >Oregon</span>
                             </span>
                             	<span class="paddedline">
 
-              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP1">Healthnotes</span><span>/</span>
+              <span class="companyname" >Healthnotes</span><span>/</span>
                              <span class="datesWrapper">
 
-                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD1">Apr 2016</span><span> to </span>
-                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT1">Feb 2018</span>
+                <span class="jobdates" format="%b %Y" >Apr 2016</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" >Feb 2018</span>
                             </span>
                             </span>
                              <span class="paddedline">
 
-              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES1"><ul><li><span class="">Prepared and presented visually appealing and persuasive technical proposals for clients.</span>
+              <span class="jobline" ><ul><li><span class="">Prepared and presented visually appealing and persuasive technical proposals for clients.</span>
                             </li>
                             <li><span class="">Troubleshooted and resolved web application issues escalated from customer support and other departments with a 100% success customer satisfaction.</span>
                             </li>
@@ -521,27 +434,27 @@
                             </span>
                         </div>
                     </div>
-                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_2_b8b3982f-d9a5-4703-871a-6f511ed3fe79" class="paragraph" style="padding-top: NaNpx;">
+                    <div  class="paragraph" style="padding-top: NaNpx;">
                         <div class="singlecolumn">
                              <span class="paddedline">
 
-              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT2">Solutions Engineer</span>
+              <span class="jobtitle" >Sales Engineer</span>
                             <br>
-                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT2">Portland</span><span>, </span>
-                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA2">Oregon</span>
+                             <span class="joblocation jobcity" >Portland</span><span>, </span>
+                             <span class="joblocation jobstate" >Oregon</span>
                             </span>
                             	<span class="paddedline">
 
-              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP2">SurveyMonkey</span><span>/</span>
+              <span class="companyname" >SurveyMonkey</span><span>/</span>
                              <span class="datesWrapper">
 
-                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD2">Nov 2013</span><span> to </span>
-                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT2">Jan 2016</span>
+                <span class="jobdates" format="%b %Y" >Nov 2013</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" >Jan 2016</span>
                             </span>
                             </span>
                              <span class="paddedline">
 
-              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES2"><ul><li><span class="">Created API proofs of concept that reinforced trust, increased security and made it easier for customers to do the right thing instead of the easy thing.</span>
+              <span class="jobline" ><ul><li><span class="">Created API proofs of concept that reinforced trust, increased security and made it easier for customers to do the right thing instead of the easy thing.</span>
                             </li>
                             <li><span class=""></span><span class="">Conducted design and code reviews to share knowledge with development team, product management, and customer support.</span>
                             </li>
@@ -558,27 +471,27 @@
                             </span>
                         </div>
                     </div>
-                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_3_0f69aa07-62ae-4245-8966-dc794495f130" class="paragraph" style="padding-top: NaNpx;">
+                    <div  class="paragraph" style="padding-top: NaNpx;">
                         <div class="singlecolumn">
                              <span class="paddedline">
 
-              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT3">Technical Support Engineer</span>
+              <span class="jobtitle" >Technical Support Engineer</span>
                             <br>
-                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT3">Portland</span><span>, </span>
-                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA3">Oregon</span>
+                             <span class="joblocation jobcity" >Portland</span><span>, </span>
+                             <span class="joblocation jobstate" >Oregon</span>
                             </span>
                             	<span class="paddedline">
 
-              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP3">New Relic</span><span>/</span>
+              <span class="companyname" >New Relic</span><span>/</span>
                              <span class="datesWrapper">
 
-                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD3">Sep 2012</span><span> to </span>
-                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT3">Oct 2013</span>
+                <span class="jobdates" format="%b %Y" >Sep 2012</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" >Oct 2013</span>
                             </span>
                             </span>
                              <span class="paddedline">
 
-              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES3"><ul><li><span class="">Mentored new support engineers in-depth on Application Performance Monitoring technologies, customer service, and process.</span>
+              <span class="jobline" ><ul><li><span class="">Mentored new support engineers in-depth on Application Performance Monitoring technologies, customer service, and process.</span>
                             </li>
                             <li><span class="">Mastered composure and patience in face of difficult customer situations. </span>
                                 <br>
@@ -594,263 +507,254 @@
                             </span>
                         </div>
                     </div>
-                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_4_677d1e20-0701-43ed-9011-f2b820c9bb6b" class="paragraph" style="padding-top: NaNpx;">
+                    <div  class="paragraph" style="padding-top: NaNpx;">
                         <div class="singlecolumn">
                              <span class="paddedline">
 
-              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT4">Customer Support Technician (abbreviated)</span>
+              <span class="jobtitle" >Customer Support Technician (abbreviated)</span>
                             <br>
-                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT4">Remote</span>
-                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA4"></span>
+                             <span class="joblocation jobcity" >Remote</span>
+                             <span class="joblocation jobstate" ></span>
                             </span>
                             	<span class="paddedline">
 
-              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP4">Sutherland Global Services</span><span>/</span>
+              <span class="companyname" >Sutherland Global Services</span><span>/</span>
                              <span class="datesWrapper">
 
-                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD4">Jun 2011</span><span> to </span>
-                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT4">Aug 2012</span>
+                <span class="jobdates" format="%b %Y" >Jun 2011</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" >Aug 2012</span>
                             </span>
                             </span>
                              <span class="paddedline">
 
-              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES4"><ul><li>This was a simple, part-time no-brainer transitional job providing high speed internet support & customer service,  PC & Mac troubleshooting, and service dispatch.</li></ul></span>
+              <span class="jobline" ><ul><li>This was a simple, part-time no-brainer transitional job providing high speed internet support & customer service,  PC & Mac troubleshooting, and service dispatch.</li></ul></span>
                             </span>
                         </div>
                     </div>
-                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_5_50c42629-f7e8-4b4d-8d8f-b7eab45e77ae" class="paragraph" style="padding-top: NaNpx;">
+                    <div  class="paragraph" style="padding-top: NaNpx;">
                         <div class="singlecolumn">
                              <span class="paddedline">
 
-              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT5">Owner, Co-CEO</span>
+              <span class="jobtitle" >Owner, Co-CEO</span>
                             <br>
-                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT5">Tryon</span><span>, </span>
-                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA5">North Carolina</span>
+                             <span class="joblocation jobcity" >Tryon</span><span>, </span>
+                             <span class="joblocation jobstate" >North Carolina</span>
                             </span>
                             	<span class="paddedline">
 
-              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP5">High Tech House Call, LLC</span><span>/</span>
+              <span class="companyname" >High Tech House Call, LLC</span><span>/</span>
                              <span class="datesWrapper">
 
-                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD5">Jan 2008</span><span> to </span>
-                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT5">Jun 2011</span>
+                <span class="jobdates" format="%b %Y" >Jan 2008</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" >Jun 2011</span>
                             </span>
                             </span>
                              <span class="paddedline">
 
-              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES5"><ul><li>Full-service information technology service &amp; outsourcing  </li><li>In-shop PC &amp; Mac hardware &amp; software repair  </li><li>On-site PC, server, networking, &amp; printer support  </li><li>WAN: fiber optic, metropolitan Wi-Fi, DSL, metropolitan Ethernet, VPN  </li><li>LAN: Wi-Fi, VoIP, fiber &amp; copper gigabit Ethernet, firewall  </li><li>Remote management &amp; monitoring (RMM)  Multiple </li><li>OSs: Linux server &amp; desktop, Windows server &amp; desktop, NexentaStor, OS X </li><li> Disaster preparedness &amp; recovery, malware prevention &amp; recovery  </li><li>Technology planning &amp; implementation: long-term goals &amp; business cases </li><li> Marketing: web pages, AdWords, print</li><li> Vendor relationship development &amp; maintenance  </li><li>Process development &amp; maintenance.</li></ul></span>
+              <span class="jobline" ><ul><li>Full-service information technology service &amp; outsourcing  </li><li>In-shop PC &amp; Mac hardware &amp; software repair  </li><li>On-site PC, server, networking, &amp; printer support  </li><li>WAN: fiber optic, metropolitan Wi-Fi, DSL, metropolitan Ethernet, VPN  </li><li>LAN: Wi-Fi, VoIP, fiber &amp; copper gigabit Ethernet, firewall  </li><li>Remote management &amp; monitoring (RMM)  Multiple </li><li>OSs: Linux, Windows, NexentaStor, OS X </li><li> Disaster preparedness &amp; recovery, malware prevention &amp; recovery  </li><li>Technology planning &amp; implementation: long-term goals &amp; business cases </li><li> Marketing: web pages, AdWords, print</li><li> Vendor relationship development &amp; maintenance  </li><li>Process development &amp; maintenance.</li></ul></span>
                             </span>
                         </div>
                     </div>
-                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_6_450e9770-26e9-4ef3-9c97-93c9c981dd89" class="paragraph" style="padding-top: NaNpx;">
+                    <div  class="paragraph" style="padding-top: NaNpx;">
                         <div class="singlecolumn">
                              <span class="paddedline">
 
-              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT6">Co-Owner/Operator (abbreviated)</span>
+              <span class="jobtitle" >Co-Owner/Operator (abbreviated)</span>
                             <br>
-                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT6">Tryon</span><span>, </span>
-                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA6">North Carolina</span>
+                             <span class="joblocation jobcity" >Tryon</span><span>, </span>
+                             <span class="joblocation jobstate" >North Carolina</span>
                             </span>
                             	<span class="paddedline">
 
-              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP6">The Historic Melrose Inn</span><span>/</span>
+              <span class="companyname" >The Historic Melrose Inn</span><span>/</span>
                              <span class="datesWrapper">
 
-                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD6">Aug 2006</span><span> to </span>
-                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT6">Nov 2008</span>
+                <span class="jobdates" format="%b %Y" >Aug 2006</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" >Nov 2008</span>
                             </span>
                             </span>
                              <span class="paddedline">
 
-              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES6"><ul><li>Marketing: web pages, AdWords, various print</li><li>Front desk, customer service, reservations, facility maintenance</li><li>Staffing for events, restaurant &amp; lodging  workforce (hire/fire)</li><li>Event planning, chef, much more (everything else)</li></ul></span>
+              <span class="jobline" ><ul><li>Marketing: web pages, AdWords, various print</li><li>Front desk, customer service, reservations, facility maintenance</li><li>Staffing for events, restaurant &amp; lodging  workforce (hire/fire)</li><li>Event planning, chef, much more (everything else)</li></ul></span>
                             </span>
                         </div>
                     </div>
-                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_7_6f5d4908-ed27-4a4d-8d14-b750ebc9607c" class="paragraph" style="padding-top: NaNpx;">
+                    <div  class="paragraph" style="padding-top: NaNpx;">
                         <div class="singlecolumn">
                              <span class="paddedline">
 
-              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT7">Electronic Data Systems (EDS)</span>
+              <span class="jobtitle" >Electronic Data Systems (EDS)</span>
                             <br>
-                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT7">Miramar</span><span>, </span>
-                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA7">Florida</span>
+                             <span class="joblocation jobcity" >Miramar</span><span>, </span>
+                             <span class="joblocation jobstate" >Florida</span>
                             </span>
                             	<span class="paddedline">
 
-              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP7"></span>
+              <span class="companyname" ></span>
                              <span class="datesWrapper">
 
-                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD7">Jan 1996</span><span> to </span>
-                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT7">Aug 2006</span>
+                <span class="jobdates" format="%b %Y" >Jan 1996</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" >Aug 2006</span>
                             </span>
                             </span>
                              <span class="paddedline">
 
-              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES7"></span>
+              <span class="jobline" ></span>
                             </span>
                         </div>
                     </div>
-                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_8_f648efce-510b-4467-81a8-e4029e2d1bf7" class="paragraph" style="padding-top: NaNpx;">
+                    <div  class="paragraph" style="padding-top: NaNpx;">
                         <div class="singlecolumn">
                              <span class="paddedline">
 
-              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT8">IT Problem Manager</span>
+              <span class="jobtitle" >IT Problem Manager</span>
                             <br>
-                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT8"></span>
-                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA8"></span>
+                             <span class="joblocation jobcity" ></span>
+                             <span class="joblocation jobstate" ></span>
                             </span>
                             	<span class="paddedline">
 
-              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP8"></span>
+              <span class="companyname" ></span>
                              <span class="datesWrapper">
 
-                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD8">Jan 2001</span><span> to </span>
-                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT8">Jan 2006</span>
+                <span class="jobdates" format="%b %Y" >Jan 2001</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" >Jan 2006</span>
                             </span>
                             </span>
                              <span class="paddedline">
 
-              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES8"><ul><li>Critical response: vigilance &amp; response to critical, high business impact &amp; high visibility IT infrastructure degradations &amp; outages</li><li>Broad     IT knowledge: responsible for understanding any &amp; all technology employed across the entire enterprise</li><li>Distributed   server architectures, mainframe computing, and embedded systems </li><li> Resolution    coordination: when problems weren't being resolved, my team engaged the appropriate teams  Information    coordination: keep management and end users informed of progress toward problem resolution</li><li>Collaboration    leadership: connected dissimilar teams to solve unusual problems</li></ul></span>
+              <span class="jobline" ><ul><li>Critical response: vigilance &amp; response to critical, high business impact &amp; high visibility IT infrastructure degradations &amp; outages</li><li>Broad     IT knowledge: responsible for understanding any &amp; all technology employed across the entire enterprise</li><li>Distributed   server architectures, mainframe computing, and embedded systems </li><li> Resolution    coordination: when problems weren't being resolved, my team engaged the appropriate teams  Information    coordination: keep management and end users informed of progress toward problem resolution</li><li>Collaboration    leadership: connected dissimilar teams to solve unusual problems</li></ul></span>
                             </span>
                         </div>
                     </div>
-                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_9_2a369518-2024-455d-89b4-f129b5704f01" class="paragraph" style="padding-top: NaNpx;">
+                    <div  class="paragraph" style="padding-top: NaNpx;">
                         <div class="singlecolumn">
                              <span class="paddedline">
 
-              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT9">Technical Assistant (team leader)</span>
+              <span class="jobtitle" >Technical Assistant (team leader)</span>
                             <br>
-                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT9"></span>
-                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA9"></span>
+                             <span class="joblocation jobcity" ></span>
+                             <span class="joblocation jobstate" ></span>
                             </span>
                             	<span class="paddedline">
 
-              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP9"></span>
+              <span class="companyname" ></span>
                              <span class="datesWrapper">
 
-                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD9">Jan 2000</span><span> to </span>
-                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT9">Jan 2001</span>
+                <span class="jobdates" format="%b %Y" >Jan 2000</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" >Jan 2001</span>
                             </span>
                             </span>
                              <span class="paddedline">
 
-              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES9"><ul><li>Mentoring & Quality Assurance: supervise & train team members to ensure quality & continuous technical and service improvement as well as career development.</li><li>Tech support escalation: 2nd tier in a 2-tier support structure </li><li>General oversight: time recording, general coaching & guidance</li><li>Quality assurance: call monitoring, case review</li><li>Customer service mentoring: train team members to ensure continuous improvement</li></ul></span>
+              <span class="jobline" ><ul><li>Mentoring & Quality Assurance: supervise & train team members to ensure quality & continuous technical and service improvement as well as career development.</li><li>Tech support escalation: 2nd tier in a 2-tier support structure </li><li>General oversight: time recording, general coaching & guidance</li><li>Quality assurance: call monitoring, case review</li><li>Customer service mentoring: train team members to ensure continuous improvement</li></ul></span>
                             </span>
                         </div>
                     </div>
-                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_10_00e90622-f7a4-4df6-9e15-78c21ba8fc23" class="paragraph" style="padding-top: NaNpx;">
+                    <div  class="paragraph" style="padding-top: NaNpx;">
                         <div class="singlecolumn">
                              <span class="paddedline">
 
-              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT10">Technical Support Engineer</span>
+              <span class="jobtitle" >Technical Support Engineer</span>
                             <br>
-                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT10"></span>
-                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA10"></span>
+                             <span class="joblocation jobcity" ></span>
+                             <span class="joblocation jobstate" ></span>
                             </span>
                             	<span class="paddedline">
 
-              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP10"></span>
+              <span class="companyname" ></span>
                              <span class="datesWrapper">
 
-                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD10">Jan 1996</span><span> to </span>
-                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT10">Jan 2000</span>
+                <span class="jobdates" format="%b %Y" >Jan 1996</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" >Jan 2000</span>
                             </span>
                             </span>
                              <span class="paddedline">
 
-              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES10"><ul><li>First level tech support: single point of contact for travel related technical systems </li><li>Extensive troubleshooting: LAN &amp; WAN, client/server, mainframe access, printer trouble</li><li>Customer service: clear &amp; repeated process, de-escalation, clear expectations, complete follow-through.</li></ul></span>
+              <span class="jobline" ><ul><li>First level tech support: single point of contact for travel related technical systems </li><li>Extensive troubleshooting: LAN &amp; WAN, client/server, mainframe access, printer trouble</li><li>Customer service: clear &amp; repeated process, de-escalation, clear expectations, complete follow-through.</li></ul></span>
                             </span>
                         </div>
                     </div>
-                    <div id="PARAGRAPH_dcbe37e8-c349-41f7-89a0-4927e4ae7625_11_bcaa0001-f572-426a-bcb7-68ae109e8fcc" class="paragraph" style="padding-top: NaNpx;">
+                    <div  class="paragraph" style="padding-top: NaNpx;">
                         <div class="singlecolumn">
                              <span class="paddedline">
 
-              <span class="jobtitle" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JTIT11">Application Developer/System Programmer</span>
+              <span class="jobtitle" >Application Developer/System Programmer</span>
                             <br>
-                             <span class="joblocation jobcity" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JCIT11">Orlando</span><span>, </span>
-                             <span class="joblocation jobstate" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTA11">Florida</span>
+                             <span class="joblocation jobcity" >Orlando</span><span>, </span>
+                             <span class="joblocation jobstate" >Florida</span>
                             </span>
                             	<span class="paddedline">
 
-              <span class="companyname" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625COMP11">Ticketmaster South</span><span>/</span>
+              <span class="companyname" >Ticketmaster South</span><span>/</span>
                              <span class="datesWrapper">
 
-                <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JSTD11">Sep 1993</span><span> to </span>
-                             <span class="jobdates" format="%b %Y" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625EDDT11">Dec 1995</span>
+                <span class="jobdates" format="%b %Y" >Sep 1993</span><span> to </span>
+                             <span class="jobdates" format="%b %Y" >Dec 1995</span>
                             </span>
                             </span>
                              <span class="paddedline">
 
-              <span class="jobline" id="dcbe37e8-c349-41f7-89a0-4927e4ae7625JDES11"><ul><li>Pascal &amp; Visual BASIC  Application development: In-house needs &amp; special client requests</li><li>Day-to-day data center assistance: networking, troubleshooting, Micro-VAX &amp; RS-232.</li></ul></span>
+              <span class="jobline" ><ul><li>Pascal &amp; Visual BASIC  Application development: In-house needs &amp; special client requests</li><li>Day-to-day data center assistance: networking, troubleshooting, Micro-VAX &amp; RS-232.</li></ul></span>
                             </span>
                         </div>
                     </div>
                 </div>
-                <div id="SECTION_EDUCa37ae312-a37f-4b19-bf33-b3d11f43d895" class="section" style="padding-top: 0px;">
+                <div  class="section" style="padding-top: 0px;">
                     <div class="heading">
-                        <div id="SECTNAME_EDUCa37ae312-a37f-4b19-bf33-b3d11f43d895" class="sectiontitle">Education and Training</div>
+                        <div  class="sectiontitle">Education &amp; Training</div>
                     </div>
-                    <div id="PARAGRAPH_a37ae312-a37f-4b19-bf33-b3d11f43d895_1_e3dc121b-a41b-4c6e-95c9-7461729e7790" class="paragraph firstparagraph" style="padding-top: NaNpx;">
+                    <div  class="paragraph firstparagraph" style="padding-top: NaNpx;">
                         <div class="singlecolumn">
                              <span class="paddedline">
 
-              <span class="degree" id="a37ae312-a37f-4b19-bf33-b3d11f43d895DGRE1">Associate of Arts</span><span>: </span>
-                             <span class="programline" id="a37ae312-a37f-4b19-bf33-b3d11f43d895STUY1">Humanities with Honors</span>
+              <span class="degree" >Associate of Arts</span><span>: </span>
+                             <span class="programline" >Humanities with Honors</span>
                             </span>
                             	<span class="paddedline">
 
-              <span class="companyname companyname_educ" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SCHO1">Valencia Community College</span><span></span>
+              <span class="companyname companyname_educ" >Valencia Community College</span><span></span>
 
                             </span>
                              <span class="paddedline">
 
-              <span class="joblocation jobcity" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SCIT1">Orlando</span><span>, </span>
-                             <span class="joblocation jobstate" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SSTA1">FL</span>
-                             <span class="joblocation jobstate" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SCNT1"></span>
+              <span class="joblocation jobcity" >Orlando</span><span>, </span>
+                             <span class="joblocation jobstate" >FL</span>
+                             <span class="joblocation jobstate" ></span>
                             </span>
 
                              <span class="paddedline">
 
-              <span class="field" id="a37ae312-a37f-4b19-bf33-b3d11f43d895FRFM1"></span>
+              <span class="field" ></span>
                             </span>
                         </div>
                     </div>
-                    <div id="PARAGRAPH_a37ae312-a37f-4b19-bf33-b3d11f43d895_2_dc556190-a13c-4ca2-91de-41f81ac54e3c" class="paragraph" style="padding-top: NaNpx;">
+                    <div  class="paragraph">
                         <div class="singlecolumn">
                              <span class="paddedline">
 
-              <span class="degree" id="a37ae312-a37f-4b19-bf33-b3d11f43d895DGRE2">Master of Arts - incomplete</span><span>: </span>
-                             <span class="programline" id="a37ae312-a37f-4b19-bf33-b3d11f43d895STUY2">Interior Design</span>
+              <span class="degree" >Master of Arts - incomplete</span><span>: </span>
+                             <span class="programline" >Interior Design</span>
                             </span>
-                            	<span class="paddedline">
-
-              <span class="companyname companyname_educ" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SCHO2">University of Miami International School of Art & Design</span><span></span>
-
-                            </span>
+              <span class="companyname companyname_educ" >University of Miami International School of Art & Design</span>
                              <span class="paddedline">
 
-              <span class="joblocation jobcity" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SCIT2">Miami</span><span>, </span>
-                             <span class="joblocation jobstate" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SSTA2">FL</span>
-                             <span class="joblocation jobstate" id="a37ae312-a37f-4b19-bf33-b3d11f43d895SCNT2"></span>
-                            </span>
-
-                             <span class="paddedline">
-
-              <span class="field" id="a37ae312-a37f-4b19-bf33-b3d11f43d895FRFM2"></span>
+              <span class="joblocation jobcity" >Miami</span><span>, </span>
+                             <span class="joblocation jobstate" >FL</span>
+              <span class="field" ></span>
                             </span>
                         </div>
                     </div>
                 </div>
-                <div id="SECTION_AFIL1d802d58-e8ad-436f-a3fc-fbdfafb9049b" class="section" style="padding-top: 0px;">
+                <div  class="section">
                     <div class="heading">
-                        <div id="SECTNAME_AFIL1d802d58-e8ad-436f-a3fc-fbdfafb9049b" class="sectiontitle">Community Service</div>
+                        <div  class="sectiontitle">Community Service</div>
                     </div>
-                    <div id="PARAGRAPH_1d802d58-e8ad-436f-a3fc-fbdfafb9049b_1_923c75ac-8f91-4a25-be88-2b21c8605d9a" class="paragraph firstparagraph" style="padding-top: NaNpx;">
-                        <div class="field singlecolumn" id="1d802d58-e8ad-436f-a3fc-fbdfafb9049bFRFM1">
-                            <div>Former Director &amp; Webmaster: Oregon Bears, Inc. Portland, OR</div>
-                            <div>Former Media Secretary & Director: Tryon Downtown Development Association Tryon, NC</div>
-                            <div>Former President of the Board of Directors: Theatre Downtown Orlando, FL</div>
+                    <div  class="paragraph firstparagraph" style="padding-top: NaNpx;">
+                        <div class="field singlecolumn" >
+                            <div class="paragraph">Former Director &amp; Webmaster<br> Oregon Bears, Inc. Portland, OR</div>
+                            <div class="paragraph">Former Media Secretary & Director<br>Tryon Downtown Development Association Tryon, NC</div>
+                            <div class="paragraph">Former President of the Board of Directors<br> Theatre Downtown Orlando, FL</div>
                         </div>
                     </div>
                 </div>
